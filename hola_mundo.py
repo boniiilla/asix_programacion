@@ -1,1 +1,1 @@
-print("Hello world, modificado desde github x2")
+print("Hello world, modificado desde github")
