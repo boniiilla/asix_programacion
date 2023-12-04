@@ -8,9 +8,3 @@ array = [46, 50, 65, 97, 69, 33, 59, 71, 98, 47, 55, 82, 35,  9, 75, 39, 93,
 size_array = len(array)
 array_ordenado = []
 
-for i in range (1, size_array+1):
-    for j in range(0,size_array):
-        if array [j] == i:
-            print (i)
-            array_ordenado.append(i)
-print(array_ordenado)
