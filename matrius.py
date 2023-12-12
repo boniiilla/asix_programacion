@@ -7,6 +7,7 @@ for fila in matriu:
     print()
 
 #TODO
+'''
 mida_matriu = len(matriu)
 for array in range(0,mida_matriu):
     aux_array = matriu[array]
@@ -14,7 +15,10 @@ for array in range(0,mida_matriu):
     for valor in range(0,aux_len_array):
         aux_array [valor] += 1
     matriu[array] = aux_array
-
+'''
+for i in range(0,len(matriu)):
+    for j in range(0,len(matriu[i])):
+        matriu[i][j] += 1
 
 print("Matriu final:")
 for fila in matriu:
