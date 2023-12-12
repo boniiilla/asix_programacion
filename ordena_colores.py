@@ -1,4 +1,4 @@
-array = ["indigo", "groc", "verd", "vermell", "blau", "cian", "taronja"]
+array = ["indigo", "groc", "verd", "vermell", "cian", "blau", "taronja"]
 
 '''
 indigo = 435
