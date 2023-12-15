@@ -1,5 +1,5 @@
 #PRE: Añadimos una lista de usuarios con la siguiente inforación: Nom, Cognom, Edat, Nota1, Nota2, Nota3 (Notas con valor entre 0-10)
-estudiantes = [("Carlos", "Bonilla", 18, 7, 6, 10), ("Ruben", "Rodriguez", 20, 6, 5, 9), ("Izan", "Lozano", 18, 1, 5, 8)]
+estudiantes = []
 estudiantes_condicion1 = []
 estudiantes_condicion2 = []
 
@@ -29,7 +29,7 @@ while estudiants_afegits < nombre_estudiants:
 
     estudiants_afegits += 1
 
-
+# Hacemos las dos condiciones
 for alumno in range(len(estudiantes)):
     nota_media = (estudiantes[alumno][3]*0.3) + (estudiantes[alumno][4]*0.4) + (estudiantes[alumno][5]*0.3)
     if nota_media > 7:
@@ -41,10 +41,12 @@ for alumno in range(len(estudiantes)):
             estudiantes_condicion2.append(estudiantes[alumno])
             break
 
-print("ESTUDIANTES CON NOTA MEDIA > 7")
+# Mostramos los estudiantes con nota media mayor que 7
+print("\nESTUDIANTES CON NOTA MEDIA > 7")
 for alumno in range(len(estudiantes_condicion1)):
-    print(f"\tNom: {estudiantes_condicion1[alumno][0]} | Cognom: {estudiantes_condicion1[alumno][1]} | Edat: {estudiantes_condicion1[alumno][2]} | Notas: {estudiantes_condicion1[alumno][3]},{estudiantes_condicion1[alumno][4]},{estudiantes_condicion1[alumno][5]}")
+    print(f"\n\tNom: {estudiantes_condicion1[alumno][0]} | Cognom: {estudiantes_condicion1[alumno][1]} | Edat: {estudiantes_condicion1[alumno][2]} | Notas: {estudiantes_condicion1[alumno][3]},{estudiantes_condicion1[alumno][4]},{estudiantes_condicion1[alumno][5]}")
 
-print("ESTUDIANTES CON UNA NOTA > 8")
+# Mostramos los estudiantes con una nota mayor que 8
+print("\nESTUDIANTES CON UNA NOTA > 8")
 for alumno in range(len(estudiantes_condicion2)):
-    print(f"\tNom: {estudiantes_condicion2[alumno][0]} | Cognom: {estudiantes_condicion2[alumno][1]} | Edat: {estudiantes_condicion2[alumno][2]} | Notas: {estudiantes_condicion2[alumno][3]},{estudiantes_condicion2[alumno][4]},{estudiantes_condicion2[alumno][5]}")
+    print(f"\n\tNom: {estudiantes_condicion2[alumno][0]} | Cognom: {estudiantes_condicion2[alumno][1]} | Edat: {estudiantes_condicion2[alumno][2]} | Notas: {estudiantes_condicion2[alumno][3]},{estudiantes_condicion2[alumno][4]},{estudiantes_condicion2[alumno][5]}")
