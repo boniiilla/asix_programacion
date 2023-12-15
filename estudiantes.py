@@ -1,6 +1,9 @@
 #PRE: Añadim una llista de usuaris amb la següent informació: Nom, Cognom, Edat, Nota1, Nota2, Nota3 (Notas con valor entre 0-10)
 estudiantes = []
 
+"""
+CODIGO PARA AÑADIR ESTUDIANTES AUTOMATICAMENTE:
+
 nombre_estudiants = int(input("Introdueix el nombre de estudiants a afegir: "))
 estudiants_afegits = 0
 while estudiants_afegits < nombre_estudiants:
@@ -20,3 +23,4 @@ while estudiants_afegits < nombre_estudiants:
     estudiantes.append(tuple(estudiante))
     estudiants_afegits += 1
     print(estudiantes)
+"""
