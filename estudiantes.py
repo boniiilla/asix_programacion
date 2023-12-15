@@ -1,6 +1,5 @@
 #PRE: Añadim una llista de usuaris amb la següent informació: Nom, Cognom, Edat, Nota1, Nota2, Nota3 (Notas con valor entre 0-10)
-estudiantes = [(Carlos, Bonilla, 18, 7, 6, 10), (Ruben, Rodriguez, 20, 6, 5, 9), (Izan, Lozano, 18, 1, 5, 8)]
-
+estudiantes = [("Carlos", "Bonilla", 18, 7, 6, 10), ("Ruben", "Rodriguez", 20, 6, 5, 9), ("Izan", "Lozano", 18, 1, 5, 8)]
 """
 CODIGO PARA AÑADIR ESTUDIANTES AUTOMATICAMENTE:
 
@@ -24,3 +23,4 @@ while estudiants_afegits < nombre_estudiants:
     estudiants_afegits += 1
     print(estudiantes)
 """
+
