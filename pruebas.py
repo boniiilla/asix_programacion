@@ -1,4 +1,4 @@
-a = "Hola"
-b = "hola"
+estudiante = []
 
-print(a<b)
+estudiante.append("carlos", "carlos")
+print(estudiante)
