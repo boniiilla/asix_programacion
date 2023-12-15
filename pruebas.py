@@ -1,4 +1,2 @@
-estudiante = []
+estudiantes = [(Carlos, Bonilla, 18, 7, 6, 10), (Ruben, Rodriguez, 20, 6, 5, 9), (Izan, Lozano, 18, 1, 5, 8)]
 
-estudiante.append("carlos", "carlos")
-print(estudiante)
