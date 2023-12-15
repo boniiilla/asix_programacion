@@ -50,3 +50,5 @@ for alumno in range(len(estudiantes_condicion1)):
 print("\nESTUDIANTES CON UNA NOTA > 8")
 for alumno in range(len(estudiantes_condicion2)):
     print(f"\n\tNom: {estudiantes_condicion2[alumno][0]} | Cognom: {estudiantes_condicion2[alumno][1]} | Edat: {estudiantes_condicion2[alumno][2]} | Notas: {estudiantes_condicion2[alumno][3]},{estudiantes_condicion2[alumno][4]},{estudiantes_condicion2[alumno][5]}")
+
+#POST: Mostramos las dos condiciones que nos pide el enunciado.
