@@ -36,10 +36,10 @@ for alumno in range(len(estudiantes)):
         estudiantes_condicion1.append(estudiantes[alumno])
     print(nota_media)
     
-    for nota in range(notas_total,notas_total+notas_total):
+    for nota in range(3,3+notas_total):
         if estudiantes[alumno][nota] > 8:
             estudiantes_condicion2.append(estudiantes[alumno])
-            break
+            break # Dale una vuelta a ver como poder hacerlo sin break
 
 # Mostramos los estudiantes con nota media mayor que 7
 print("\nESTUDIANTES CON NOTA MEDIA > 7")
