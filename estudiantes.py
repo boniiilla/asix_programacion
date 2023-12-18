@@ -6,12 +6,13 @@ estudiantes_condicion2 = []
 #CODIGO PARA AÑADIR ESTUDIANTES AUTOMATICAMENTE:
 
 nombre_estudiants = int(input("Introdueix el nombre de estudiants a afegir: "))
-notas_total = int(input("Introduce el numero de notas que tienes por estudiante: "))
+#notas_total = int(input("Introduce el numero de notas que tienes por estudiante: "))
 estudiants_afegits = 0
 
 while estudiants_afegits < nombre_estudiants:
     estudiante = [] #Limpiar los datos del estudiante
     #Asignamos la informacion en variables del estudiante
+    print("Añade el alumno: ")
     nom = str(input("Nom: "))
     cognom = str(input("Cognom: "))
     edat = int(input("Edat: "))
@@ -21,7 +22,7 @@ while estudiants_afegits < nombre_estudiants:
     estudiante.append(cognom)
     estudiante.append(edat)
     
-    for nota in range(1,notas_total+1):
+    for nota in range(1,3+1):
         nota_estudiante = int(input(f"Introduce la nota{nota} del estudiante: "))
         estudiante.append(nota_estudiante)
 
@@ -34,12 +35,12 @@ for alumno in range(len(estudiantes)):
     nota_media = (estudiantes[alumno][3]*0.3) + (estudiantes[alumno][4]*0.4) + (estudiantes[alumno][5]*0.3)
     if nota_media > 7:
         estudiantes_condicion1.append(estudiantes[alumno])
-    print(nota_media)
-    
-    for nota in range(3,3+notas_total):
-        if estudiantes[alumno][nota] > 8:
+    estudante_añadido = False
+    for nota in range(3,6):
+        if estudiantes[alumno][nota] > 8 and estudante_añadido == False:
             estudiantes_condicion2.append(estudiantes[alumno])
-            break # Dale una vuelta a ver como poder hacerlo sin break
+            estudante_añadido = True
+            #break # Dale una vuelta a ver como poder hacerlo sin break
 
 # Mostramos los estudiantes con nota media mayor que 7
 print("\nESTUDIANTES CON NOTA MEDIA > 7")
