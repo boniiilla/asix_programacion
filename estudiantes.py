@@ -22,7 +22,7 @@ while estudiants_afegits < nombre_estudiants:
     estudiante.append(cognom)
     estudiante.append(edat)
     
-    for nota in range(1,3+1):
+    for nota in range(1,4):
         nota_estudiante = int(input(f"Introduce la nota{nota} del estudiante: "))
         estudiante.append(nota_estudiante)
 
