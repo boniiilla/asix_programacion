@@ -30,6 +30,9 @@ for i in range(len(lista_palabras)):
         if lista_palabras[j][1] < lista_palabras[j+1][1]:
             lista_palabras[j], lista_palabras[j+1] = lista_palabras[j+1], lista_palabras[j]
 
+for palabra in lista_palabras:
+    print("Palabra:", palabra[0], "Longitud:", palabra[1])
+
 '''
 POST : Calcular y mostrar la lngitud media de las palabras,
 mostrar listado de palabras ordenadads de forma descendente por frecuencia.
