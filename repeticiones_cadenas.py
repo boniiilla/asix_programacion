@@ -27,7 +27,8 @@ for palabra in palabras_sin_repetir:
 
 for i in range(len(lista_palabras)):
     for j in range(len(lista_palabras) -i -1 ):
-        ...
+        if lista_palabras[j][1] < lista_palabras[j+1][1]:
+            lista_palabras[j], lista_palabras[j+1] = lista_palabras[j+1], lista_palabras[j]
 
 '''
 POST : Calcular y mostrar la lngitud media de las palabras,
