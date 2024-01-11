@@ -25,6 +25,9 @@ lista_palabras = []
 for palabra in palabras_sin_repetir:
     lista_palabras.append((palabra,palabras.count(palabra)))
 
+for i in range(len(lista_palabras)):
+    for j in range(len(lista_palabras) -i -1 ):
+        ...
 
 '''
 POST : Calcular y mostrar la lngitud media de las palabras,
