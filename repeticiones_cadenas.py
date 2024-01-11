@@ -15,11 +15,16 @@ palabras = texto.split()
 
 palabras_sin_repetir = set(palabras)
 
-total_palabras = 0
-for palabras in palabras_sin_repetir:
-    total_palabras += palabras.count(palabras)
+#total_palabras = 0
+#for palabras in palabras_sin_repetir:
+#    total_palabras += palabras.count(palabras)
 
-print(len(palabras), len(palabras_sin_repetir))
+#print(len(palabras), len(palabras_sin_repetir))
+
+lista_palabras = []
+for palabra in palabras_sin_repetir:
+    lista_palabras.append((palabra,palabras.count(palabra)))
+
 
 '''
 POST : Calcular y mostrar la lngitud media de las palabras,
