@@ -33,6 +33,11 @@ for i in range(len(lista_palabras)):
 for palabra in lista_palabras:
     print("Palabra:", palabra[0], "Longitud:", palabra[1])
 
+total = 0
+for palabra in lista_palabras:
+    total += palabra[1]
+
+
 '''
 POST : Calcular y mostrar la lngitud media de las palabras,
 mostrar listado de palabras ordenadads de forma descendente por frecuencia.
