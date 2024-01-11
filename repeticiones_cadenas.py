@@ -15,6 +15,14 @@ palabras = texto.split()
 
 palabras_sin_repetir = set(palabras)
 
-print(len(palabras))
-print(len(palabras_sin_repetir))
+total_palabras = 0
+for palabras in palabras_sin_repetir:
+    total_palabras += palabras.count(palabras)
+
+print(len(palabras), len(palabras_sin_repetir))
+
+'''
+POST : Calcular y mostrar la lngitud media de las palabras,
+mostrar listado de palabras ordenadads de forma descendente por frecuencia.
+'''
 
