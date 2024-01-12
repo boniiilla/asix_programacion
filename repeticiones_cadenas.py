@@ -37,7 +37,6 @@ total = 0
 for palabra in lista_palabras:
     total += palabra[1]
 
-
 '''
 POST : Calcular y mostrar la lngitud media de las palabras,
 mostrar listado de palabras ordenadads de forma descendente por frecuencia.
