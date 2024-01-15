@@ -44,7 +44,7 @@ for i in lista_completa:
         lista_sin_duplicados.append(i)
         suma = suma + i
     
-print("Suma de tots els nonbres:", suma)
+print("Suma de tots els nombres:", suma)
 
 # POST: Mostra les dues llistes i la suma final.
 
