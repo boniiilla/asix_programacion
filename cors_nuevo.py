@@ -6,4 +6,13 @@ cartas = ["4C", "QS", "AS", "AH", "8H", "5C", "2C", "7C", "JS", "6D", "KD", "6S"
 
 jugadores = [[], [], [], []] # jugadores[0] -> jugador1, jugadores[1] -> jugador2.....
 
-i = 0
+seed = int(input("Introduce un numero cualquiera: "))
+
+for j in range (13):
+    for i in range(4):
+        seed = (seed * 997) % 1000
+        random = (seed * 503) % 1000 / 1000
+        carta = int(random * (len(cartas)))
+        jugadores[i].append(cartas.pop(carta))
+        
+print(jugadores)
