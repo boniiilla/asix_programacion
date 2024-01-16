@@ -35,9 +35,14 @@ for j in range (13):
         carta = int(random * (len(jugadores[i])))
         cartas_tiradas[i].append(jugadores[i].pop(carta))
     print(cartas_tiradas)
-    cartas_hearts = []
+    
+    cartas_alta = []
+
     for i in range(4):
         if cartas_tiradas[i][0][-1] == "H":
-            cartas_hearts.append(cartas_tiradas[i])
-    if len(cartas_hearts) == 0:
-        ...
+            cartas_alta.append(cartas_tiradas[i])
+
+        if len(cartas_alta) == 0:
+            for j in range(4):
+                if cartas_tiradas[i][0][0:-1] > cartas_tiradas[j][0][0:-1]:
+                    ...
