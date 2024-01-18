@@ -40,9 +40,13 @@ for j in range (13):
 
     for i in range(4):
         if cartas_tiradas[i][0][-1] == "H":
-            cartas_alta.append(cartas_tiradas[i])
+            cartas_alta.append(cartas_tiradas[i][0])
 
-        if len(cartas_alta) == 0:
-            for j in range(4):
-                if cartas_tiradas[i][0][0:-1] > cartas_tiradas[j][0][0:-1]:
-                    ...
+    if len(cartas_alta) == 0:
+        for i in range(4):
+            if cartas_tiradas[i][0][0:-1] == "A":
+                cartas_tiradas[i][0] = cartas_tiradas[i][0].lower()
+    print(cartas_tiradas, cartas_alta)
+    
+                
+     #   print(cartas_tiradas, cartas_alta)
