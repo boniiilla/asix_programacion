@@ -27,7 +27,7 @@ print(jugadores[0][8][0:-1]) # Sacamos el Numero de la carta
 # Cada uno de los jugadores tira una carta aleatoria:
 
 for j in range (13):
-    print(f"RONDA{j+1}")
+    print(f"RONDA {j+1}")
     cartas_tiradas = [[], [], [], []]
     for i in range(4):
         seed = (seed * 997) % 1000
