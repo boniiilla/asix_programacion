@@ -69,6 +69,8 @@ for j in range (13):
     for i in range(4):
         if cartas_tiradas[i][0][0:-1] == "a":
             cartas_tiradas[i][0] = cartas_tiradas[i][0].upper()
-        print(f"Jugador{i}:",cartas_tiradas[i][0])
+        print(f"Jugador {i+1}:",cartas_tiradas[i][0])
 
     print("CARTA GANADORA:", carta_alta[0], "\n")
+
+#POST: Mostrar las cartas tiradas de cada jugador y la carta que gana la ronda
