@@ -27,26 +27,48 @@ print(jugadores[0][8][0:-1]) # Sacamos el Numero de la carta
 # Cada uno de los jugadores tira una carta aleatoria:
 
 for j in range (13):
-
+    print(f"RONDA{j+1}")
     cartas_tiradas = [[], [], [], []]
     for i in range(4):
         seed = (seed * 997) % 1000
         random = (seed * 503) % 1000 / 1000
         carta = int(random * (len(jugadores[i])))
         cartas_tiradas[i].append(jugadores[i].pop(carta))
-    print(cartas_tiradas)
     
-    cartas_alta = []
+    carta_alta = []
+    cartas_hearts = []
 
     for i in range(4):
         if cartas_tiradas[i][0][-1] == "H":
-            cartas_alta.append(cartas_tiradas[i][0])
+            cartas_hearts.append(cartas_tiradas[i][0])
+    
+    if len(cartas_hearts) > 0:
+        for i in range(len(cartas_hearts)):
+            if cartas_hearts[i][0:-1] == "A":
+                cartas_hearts[i] = cartas_hearts[i].lower()
+        #print(cartas_hearts)
 
-    if len(cartas_alta) == 0:
+        for i in range(len(cartas_hearts)):
+            for j in range(i, len(cartas_hearts)):
+                if cartas_hearts[i][0:-1] < cartas_hearts[j][0:-1]:
+                    cartas_hearts[i], cartas_hearts[j] = cartas_hearts[j], cartas_hearts[i]
+        carta_alta.append(cartas_hearts[0].upper())
+
+    if len(cartas_hearts) == 0:
         for i in range(4):
             if cartas_tiradas[i][0][0:-1] == "A":
                 cartas_tiradas[i][0] = cartas_tiradas[i][0].lower()
-    print(cartas_tiradas, cartas_alta)
+        for i in range(4):
+            for j in range(i, 4):
+                if cartas_tiradas[i][0][0:-1] < cartas_tiradas[j][0][0:-1]:
+                    cartas_tiradas[i][0], cartas_tiradas[j][0] = cartas_tiradas[j][0], cartas_tiradas[i][0]
+        
+        carta_alta.append(cartas_tiradas[0][0].upper())
     
-                
-     #   print(cartas_tiradas, cartas_alta)
+    #IMPRESION EN PANTALLA
+    for i in range(4):
+        if cartas_tiradas[i][0][0:-1] == "a":
+            cartas_tiradas[i][0] = cartas_tiradas[i][0].upper()
+        print(f"Jugador{i}:",cartas_tiradas[i][0])
+
+    print("CARTA GANADORA:", carta_alta[0], "\n")
