@@ -15,7 +15,7 @@ for j in range (13):
         carta = int(random * (len(cartas)))
         jugadores[i].append(cartas.pop(carta))
 
-print(jugadores)
+#print(jugadores)
 
 cartas_tiradas = [[], [], [], []] # Cada jugador tirara su propia carta y las compararemos (cartas_tiradas[0] -> carta de jugador[0] = jugador1)
 
