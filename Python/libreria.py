@@ -32,4 +32,4 @@ INTRODUCE OPCION: ''')
         for i in range(len(libros)):
             print(libros[i])
             if libros[i] == libro_prestado:
-                libros_prestados.append(libros.pop(i))
+                print(libros[i])
