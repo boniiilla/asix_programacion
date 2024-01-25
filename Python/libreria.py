@@ -36,6 +36,8 @@ INTRODUCE OPCION: ''')
                 libros_prestados.append(libros.pop(i))
                 prestado_bool = True
             i += 1
+            if i == (len(libros) - 1):
+                print("\nEl libro no esta en la libreria.")
     elif accion == 'D':
         libro_devuelto = input("Libro que desea devolver: ")
         for prestado in range(len(libros_prestados)):
