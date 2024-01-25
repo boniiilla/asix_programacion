@@ -43,9 +43,9 @@ INTRODUCE OPCION: ''')
         for prestado in range(len(libros_prestados)):
             if libros_prestados[prestado] == libro_devuelto:
                 libros.append(libros_prestados.pop(prestado))
-            elif len(libros_prestados) == 0:
-                print("\nNo hay prestamos")
             else:
                 print("\nLibro no encontrado en prestamos.")
+        if len(libros_prestados) == 0:
+            print("\nNo hay libros prestados.")
     else:
         print("\nOpcion Erronea!")
