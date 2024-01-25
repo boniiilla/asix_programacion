@@ -15,7 +15,7 @@ OPCIONES:
 INTRODUCE OPCION: ''')
     accion = accion.upper()
     if accion == 'M':
-        print("LIBRERIA:")
+        print("\nLIBRERIA:")
         for libro in libros:
             print(libro)
         print("\nPRESTADOS:")
@@ -29,7 +29,19 @@ INTRODUCE OPCION: ''')
         libros.remove(libro_eliminado)
     elif accion == 'P':
         libro_prestado = input("Libro que desea coger como prestamo: ")
-        for i in range(len(libros)):
-            print(libros[i])
+        prestado_bool = False
+        i = 0
+        while i < len(libros) and prestado_bool == False:
             if libros[i] == libro_prestado:
-                print(libros[i])
+                libros_prestados.append(libros.pop(i))
+                prestado_bool = True
+            i += 1
+    elif accion == 'D':
+        libro_devuelto = input("Libro que desea devolver: ")
+        for prestado in range(len(libros_prestados)):
+            if libros_prestados[prestado] == libro_devuelto:
+                libros.append(libros_prestados.pop(prestado))
+            else:
+                print("Libro no encontrado en prestamos.")
+    else:
+        print("\nOpcion Erronea!")
