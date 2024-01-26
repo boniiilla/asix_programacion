@@ -67,23 +67,24 @@ if puntuacions != [[],[],[],[],[]]:
     puntuacio_maxima = 0
     puntuacio_minima = 0
     for jugadors in range(len(puntuacions)):
-        no_añadido_d = False
-        no_añadido_e = False
         for tirada in puntuacions[jugadors]:
             if tirada > puntuacio_maxima:
                 puntuacio_maxima = tirada
-                categories["Categoria D"].append(jugadors + 1)
-                no_añadido_e = True
-            elif tirada == puntuacio_maxima and no_añadido_d == False:
-                categories["Categoria D"].append(jugadors + 1)
-                no_añadido_e = True
             if tirada < puntuacio_minima or puntuacio_minima == 0:
                 puntuacio_minima = tirada
+    añadido_d = False
+    añadido_e = False
+    for jugadors in range(len(puntuacions)):
+        añadido_d = False
+        añadido_e = False
+        for tirada in puntuacions[jugadors]:
+            if tirada == puntuacio_maxima and añadido_d == False:
+                categories["Categoria D"].append(jugadors + 1)
+                añadido_d = True
+            if tirada == puntuacio_minima and añadido_e == False:
                 categories["Categoria E"].append(jugadors + 1)
-                no_añadido_e = True
-            elif tirada == puntuacio_minima and no_añadido_e == False:
-                categories["Categoria E"].append(jugadors + 1)
-                no_añadido_e = True
+                añadido_e = True
+
 
     print(f"""\nCATEGORIES:
     A: {categories["Categoria A"]}
