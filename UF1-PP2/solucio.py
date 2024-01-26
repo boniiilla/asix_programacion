@@ -14,19 +14,8 @@ if puntuacions != [[],[],[],[],[]]:
         for tirada in jugador:
             mitjana = mitjana + tirada
         tirades = tirades + len(jugador)
-    mitjana = int(mitjana / tirades)
+    mitjana = mitjana / tirades
     print(f"\nMITJANA DE TOTES LES PUNTUACIONS: {mitjana}")
-
-    #Programa per a trobar la DE(Desviacio Mitjana):
-    suma_desviacioe = 0
-    for jugador in puntuacions:
-        for tirada in jugador:
-            suma_desviacioe = suma_desviacioe + ((tirada - mitjana)**2)
-    if mitjana != 0:
-        desviacio_estandard = int((suma_desviacioe/mitjana)**0.5)
-    else:
-        desviacio_estandard = 0
-    print(f"\nDESVIACIO ESTANDAR: {desviacio_estandard}")
 
     #Mitjana de Cada Jugador:
     mitjanes_jugadors = []
@@ -34,8 +23,18 @@ if puntuacions != [[],[],[],[],[]]:
         suma = 0
         for tirada in puntuacions[jugador]:
             suma = tirada + suma
-        mitjana_jugador = int(suma / len(puntuacions[jugador]))
+        mitjana_jugador = (suma / len(puntuacions[jugador]))
         mitjanes_jugadors.append(mitjana_jugador)
+
+    #Programa per a trobar la DE(Desviacio Mitjana):
+    suma_desviacioe = 0
+    for jugador in mitjanes_jugadors:
+        suma_desviacioe = suma_desviacioe + ((jugador - mitjana)**2)
+    if mitjana != 0:
+        desviacio_estandard = (suma_desviacioe/len(mitjanes_jugadors))**0.5
+    else:
+        desviacio_estandard = 0
+    print(f"\nDESVIACIO ESTANDAR: {desviacio_estandard}")
 
     '''
     Comprovacio que guarda la mitjana de cada jugador:
@@ -62,26 +61,27 @@ if puntuacions != [[],[],[],[],[]]:
     #Treiem la màxima puntuacío (Categoria D) y la minima (Categoria E):
     puntuacio_maxima = 0
     puntuacio_minima = 0
-    if mitjana == 0:
-        for mitja in range(len(mitjanes_jugadors)):
-            if len(categories[3]) == 0:
-                categories[3] = f"Jugador{mitja + 1}"
-                categories[4] = f"Jugador{mitja + 1}"
-            else:
-                categories[3] = categories[3]+", "+f"Jugador{mitja + 1}"
-                categories[4] = categories[4]+", "+f"Jugador{mitja + 1}"
-    else:
-        for mitja in range(len(mitjanes_jugadors)):
-            if mitjanes_jugadors[mitja] > puntuacio_maxima:
-                puntuacio_maxima = mitjanes_jugadors[mitja]
-                categories[3] = f"Jugador{mitja + 1}"
-            elif mitjanes_jugadors[mitja] == puntuacio_maxima:
-                categories[3] = categories[3]+", "+f"Jugador{mitja + 1}"
-            if mitjanes_jugadors[mitja] < puntuacio_minima or puntuacio_minima == 0:
-                puntuacio_minima = mitjanes_jugadors[mitja]
-                categories[4] = f"Jugador{mitja + 1}"
-            elif mitjanes_jugadors[mitja] == puntuacio_minima:
-                categories[4] = categories[4]+", "+f"Jugador{mitja + 1}"
+    aux_categories_3 = ""
+    aux_categories_4 = ""
+    for jugadors in range(len(puntuacions)):
+        for tirada in puntuacions[jugadors]:
+            if tirada > puntuacio_maxima:
+                aux_categories_3 = f"Jugador{jugadors + 1}"
+                puntuacio_maxima = tirada
+                categories[3] = f"Jugador{jugadors + 1}"
+            elif tirada == puntuacio_maxima:
+                if f"Jugador{jugadors + 1}" != aux_categories_3:
+                    categories[3] = categories[3]+", "+f"Jugador{jugadors + 1}"
+                    aux_categories_3 = f"Jugador{jugadors + 1}"
+            if tirada < puntuacio_minima or puntuacio_minima == 0:
+                aux_categories_4 = f"Jugador{jugadors + 1}"
+                puntuacio_minima = tirada
+                categories[4] = f"Jugador{jugadors + 1}"
+            elif tirada == puntuacio_minima:
+                if f"Jugador{jugadors + 1}" != aux_categories_4:
+                    categories[4] = categories[4]+", "+f"Jugador{jugadors + 1}"
+                    aux_categories_4 = f"Jugador{jugadors + 1}"
+            
 
     print(f"""\nCATEGORIES:
     A: {categories[0]}
