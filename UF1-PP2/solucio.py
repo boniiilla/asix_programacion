@@ -66,27 +66,24 @@ if puntuacions != [[],[],[],[],[]]:
     #Treiem la màxima puntuacío (Categoria D) y la minima (Categoria E):
     puntuacio_maxima = 0
     puntuacio_minima = 0
-    aux_categories_3 = 0
-    aux_categories_4 = 0
     for jugadors in range(len(puntuacions)):
+        no_añadido_d = False
+        no_añadido_e = False
         for tirada in puntuacions[jugadors]:
             if tirada > puntuacio_maxima:
-                aux_categories_3 = jugador + 1
                 puntuacio_maxima = tirada
-                categories["Categoria D"] = jugador + 1
-            elif tirada == puntuacio_maxima:
-                if (jugador + 1) != aux_categories_3:
-                    categories["Categoria D"] = categories["Categoria D"]+", "+(jugador + 1)
-                    aux_categories_3 = (jugador + 1)
+                categories["Categoria D"].append(jugadors + 1)
+                no_añadido_e = True
+            elif tirada == puntuacio_maxima and no_añadido_d == False:
+                categories["Categoria D"].append(jugadors + 1)
+                no_añadido_e = True
             if tirada < puntuacio_minima or puntuacio_minima == 0:
-                aux_categories_4 = jugador + 1
                 puntuacio_minima = tirada
-                categories["Categoria E"] = jugador + 1
-            elif tirada == puntuacio_minima:
-                if (jugador + 1) != aux_categories_4:
-                    categories["Categoria E"] = categories["Categoria E"]+", "+(jugador + 1)
-                    aux_categories_4 = jugador + 1
-            
+                categories["Categoria E"].append(jugadors + 1)
+                no_añadido_e = True
+            elif tirada == puntuacio_minima and no_añadido_e == False:
+                categories["Categoria E"].append(jugadors + 1)
+                no_añadido_e = True
 
     print(f"""\nCATEGORIES:
     A: {categories["Categoria A"]}
