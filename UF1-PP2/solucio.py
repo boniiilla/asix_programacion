@@ -85,7 +85,6 @@ if puntuacions != [[],[],[],[],[]]:
                 categories["Categoria E"].append(jugadors + 1)
                 añadido_e = True
 
-
     print(f"""\nCATEGORIES:
     A: {categories["Categoria A"]}
     B: {categories["Categoria B"]}
