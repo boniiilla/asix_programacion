@@ -138,9 +138,14 @@ if puntuacions != [[],[],[],[],[]]:
         total = patro_crecent + patro_decreixent
         if patro_crecent != 0 and ((patro_crecent/total)*100) >= 70:
             print(f"Jugador{jugadors + 1}: Patro evident de creixement\n")
+            patro_crecent = True
+
         elif patro_decreixent != 0 and ((patro_decreixent/total)*100) >= 70:
             print(f"Jugador{jugadors + 1}: Patro evident de decreixement\n")
+            patro_decreixent = True
         else:
             print(f"Jugador{jugadors + 1}: No hi ha patró evident\n")
+            patro_decreixent = False
+            patro_crecent = False
 else:
     print("NO HAY TIRADAS")
