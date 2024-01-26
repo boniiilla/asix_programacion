@@ -1,7 +1,12 @@
 #Introduim una entrada de dades
 puntuacions = [[13, 19, 17, 11, 5, 14, 14, 1, 1, 16, 5, 16, 14, 7, 17], [10, 16, 1, 18, 17, 17, 14, 20, 10, 7, 7, 8, 2, 10, 9], [10, 18, 11, 4, 2, 7, 6, 2, 4, 15, 11, 9, 6, 12, 17], [11, 10, 11, 13, 10, 16, 5, 7, 9, 11, 18, 5, 1, 4, 1], [2, 12, 16, 5, 12, 18, 7, 11, 7, 18, 7, 6, 6, 18, 5]]
 mitjana = 0
-categories = [[], [], [], [], []] # [[Categoria A],[Categoria B],[Categoria C],[Categoria D],[Categoria E]]
+categories = {
+    "Categories A" : [],
+    "Categories B" : [],
+    "Categories C" : [],
+    "Categories D" : [],
+    "Categories E" : [] } # [[Categoria A],[Categoria B],[Categoria C],[Categoria D],[Categoria E]]
 patrons_temporals_avancats = [[[],[]],[[],[]],[[],[]],[[],[]],[[],[]]] #patrons_temporals_avançats > jugador > pics_max, pics_min
 desviacio_estandard = 0
 puntuacio_maxima = 0
@@ -52,11 +57,11 @@ if puntuacions != [[],[],[],[],[]]:
     resta_mitjana_desviacioe = mitjana - desviacio_estandard
     for mitja in range(len(mitjanes_jugadors)):
         if mitjanes_jugadors[mitja] > suma_mitjana_desviacioe:
-            categories[0].append(f"Jugador{mitja + 1}")
+            categories["Categories A"].append(f"Jugador{mitja + 1}")
         elif mitjanes_jugadors[mitja] < suma_mitjana_desviacioe and mitjanes_jugadors[mitja] > resta_mitjana_desviacioe:
-            categories[1].append(f"Jugador{mitja + 1}")
+            categories["Categories B"].append(f"Jugador{mitja + 1}")
         elif mitjanes_jugadors[mitja] < resta_mitjana_desviacioe:
-            categories[2].append(f"Jugador{mitja + 1}")
+            categories["Categories C"].append(f"Jugador{mitja + 1}")
 
     #Treiem la màxima puntuacío (Categoria D) y la minima (Categoria E):
     puntuacio_maxima = 0
@@ -68,27 +73,27 @@ if puntuacions != [[],[],[],[],[]]:
             if tirada > puntuacio_maxima:
                 aux_categories_3 = f"Jugador{jugadors + 1}"
                 puntuacio_maxima = tirada
-                categories[3] = f"Jugador{jugadors + 1}"
+                categories["Categories D"] = f"Jugador{jugadors + 1}"
             elif tirada == puntuacio_maxima:
                 if f"Jugador{jugadors + 1}" != aux_categories_3:
-                    categories[3] = categories[3]+", "+f"Jugador{jugadors + 1}"
+                    categories["Categories D"] = categories["Categories D"]+", "+f"Jugador{jugadors + 1}"
                     aux_categories_3 = f"Jugador{jugadors + 1}"
             if tirada < puntuacio_minima or puntuacio_minima == 0:
                 aux_categories_4 = f"Jugador{jugadors + 1}"
                 puntuacio_minima = tirada
-                categories[4] = f"Jugador{jugadors + 1}"
+                categories["Categories E"] = f"Jugador{jugadors + 1}"
             elif tirada == puntuacio_minima:
                 if f"Jugador{jugadors + 1}" != aux_categories_4:
-                    categories[4] = categories[4]+", "+f"Jugador{jugadors + 1}"
+                    categories["Categories E"] = categories["Categories E"]+", "+f"Jugador{jugadors + 1}"
                     aux_categories_4 = f"Jugador{jugadors + 1}"
             
 
     print(f"""\nCATEGORIES:
-    A: {categories[0]}
-    B: {categories[1]}
-    C: {categories[2]}
-    D: {categories[3]}
-    E: {categories[4]}
+    A: {categories["Categories A"]}
+    B: {categories["Categories B"]}
+    C: {categories["Categories C"]}
+    D: {categories["Categories D"]}
+    E: {categories["Categories E"]}
     """)       
 
     #Programa per els patrons temporals avançats:
