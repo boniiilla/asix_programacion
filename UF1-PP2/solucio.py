@@ -90,8 +90,7 @@ if puntuacions != [[],[],[],[],[]]:
     B: {categories["Categoria B"]}
     C: {categories["Categoria C"]}
     D: {categories["Categoria D"]}
-    E: {categories["Categoria E"]}
-    """)       
+    E: {categories["Categoria E"]}""")       
 
     #Programa per els patrons temporals avançats:
 
