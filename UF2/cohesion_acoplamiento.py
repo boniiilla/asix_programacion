@@ -1,14 +1,24 @@
 biblioteca = []
 
-def añadir_biblioteca(biblioteca):
+def prestamo(biblioteca):
     for libro in biblioteca:
-            if libro["titulo"] == titulo and libro["disponibilidad"]:
-                libro["disponibilidad"] = False
-                print(f'Libro "{titulo}" prestado con éxito.')
+        if libro["titulo"] == titulo and libro["disponibilidad"]:
+                    libro["disponibilidad"] = False
+                    print(f'Libro "{titulo}" prestado con éxito.')
+                    encontrado = True
+                    break
+    if not encontrado:
+        print(f'Libro "{titulo}" no disponible para préstamo.')
+
+def devolucion(biblioteca):
+    for libro in biblioteca:
+            if libro["titulo"] == titulo and not libro["disponibilidad"]:
+                libro["disponibilidad"] = True
+                print(f'Libro "{titulo}" devuelto con éxito.')
                 encontrado = True
                 break
-        if not encontrado:
-            print(f'Libro "{titulo}" no disponible para préstamo.')
+    if not encontrado:
+        print(f'No se puede devolver el libro "{titulo}".')
 
 while True:
     print("\n1. Agregar libro")
@@ -30,19 +40,12 @@ while True:
     elif opcion == "2":
         titulo = input("Ingrese el título del libro a prestar: ")
         encontrado = False
-        añadir_biblioteca(encontrado)
+        prestamo(biblioteca)
 
     elif opcion == "3":
         titulo = input("Ingrese el título del libro a devolver: ")
         encontrado = False
-        for libro in biblioteca:
-            if libro["titulo"] == titulo and not libro["disponibilidad"]:
-                libro["disponibilidad"] = True
-                print(f'Libro "{titulo}" devuelto con éxito.')
-                encontrado = True
-                break
-        if not encontrado:
-            print(f'No se puede devolver el libro "{titulo}".')
+        devolucion(biblioteca)
 
     elif opcion == "4":
         print("Saliendo del programa.")
