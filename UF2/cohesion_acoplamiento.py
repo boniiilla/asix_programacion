@@ -1,5 +1,15 @@
 biblioteca = []
 
+def añadir_biblioteca(biblioteca):
+    for libro in biblioteca:
+            if libro["titulo"] == titulo and libro["disponibilidad"]:
+                libro["disponibilidad"] = False
+                print(f'Libro "{titulo}" prestado con éxito.')
+                encontrado = True
+                break
+        if not encontrado:
+            print(f'Libro "{titulo}" no disponible para préstamo.')
+
 while True:
     print("\n1. Agregar libro")
     print("2. Prestar libro")
@@ -20,14 +30,7 @@ while True:
     elif opcion == "2":
         titulo = input("Ingrese el título del libro a prestar: ")
         encontrado = False
-        for libro in biblioteca:
-            if libro["titulo"] == titulo and libro["disponibilidad"]:
-                libro["disponibilidad"] = False
-                print(f'Libro "{titulo}" prestado con éxito.')
-                encontrado = True
-                break
-        if not encontrado:
-            print(f'Libro "{titulo}" no disponible para préstamo.')
+        añadir_biblioteca(encontrado)
 
     elif opcion == "3":
         titulo = input("Ingrese el título del libro a devolver: ")
