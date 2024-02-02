@@ -6,7 +6,13 @@ pizzas = {
     "Barbacoa" : {"Ingredientes" : ["Salsa BBQ", "Jamon York", "Mozzarella", "Carne Picada"],
                   "Precio" : 12},
     "Margarita" : {"Ingredientes" : ["Mozzarella", "Tomate"],
-                   "Precio": 9}
+                   "Precio": 9},
+    "Carbonara" : {"Ingredientes": ["Mozzarella", "Nata", "Bacon", "Cebolla", "Champiñones"],
+                   "Precio": 10.5},
+    "Hawaiana" : {"Ingredientes": ["Mozzarella", "Tomate", "Jamon York", "Piña"],
+                   "Precio": 10},
+    "Pepperoni" : {"Ingredientes": ["Mozzarella", "Tomate", "Pepperoni", "Bacon", "Carne Picada"],
+                   "Precio": 11},
 }
 
 def añadir_comandas(comanda_pizzeria):
