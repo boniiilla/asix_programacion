@@ -1,5 +1,23 @@
 temperatures = []
+meses = {
+    1 : "gener",
+    2 : "febrer",
+    3 : "març",
+    4 : "abril",
+    5 : "maig",
+    6 : "juny",
+    7 : "juliol",
+    8 : "agost",
+    9 : "septembre",
+    10 : "octubre",
+    11 : "novembre",
+    12 : "decembre",
+}
 opcion = ""
+
+def mesos_registres(temperatures, meses):
+    mes = 1
+    print(meses[mes]) 
 
 def temperatures_setmanals(temperatures):
     print("Escriu les temperatures d'aquesta setmana: ")
@@ -15,6 +33,7 @@ def temperatura_mitjana(temperatures):
     for grados in temperatures:
         mitjana += grados
     mitjana = mitjana / (len(temperatures) + 1)
+    print(mitjana)
     
 
 def diferencia_maxima(temperatures):
@@ -39,8 +58,10 @@ while opcion != "FI":
 Opció: ''')
     if opcion == "RT":
         temperatures_setmanals(temperatures)
-        print(temperatures)
-    if opcion == "MJ":
+        mesos_registres(temperatures,meses)
+    elif opcion == "MJ":
         temperatura_mitjana(temperatures)
-    if opcion == "DF":
+    elif opcion == "DF":
         diferencia_maxima(temperatures)
+    elif opcion == "FI":
+        print("Opcion Incorrecta")
