@@ -69,6 +69,6 @@ Opció: ''')
         print(f"Fins avui {dies_registres + 1} de {mes_registre} la mitjana ha estat de {mitjana} graus. ")
     elif opcion == "DF":
         diferencia = diferencia_maxima(temperatures)
-        print(f"Fins avui {dies_registres + 1} de {mes_registre} la diferència màxima ha estat de {mitjana} graus. ")
-    elif opcion == "FI":
+        print(f"Fins avui {dies_registres + 1} de {mes_registre} la diferència màxima ha estat de {diferencia} graus. ")
+    elif opcion != "FI":
         print("Opcion Incorrecta")
