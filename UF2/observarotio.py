@@ -1,23 +1,29 @@
 temperatures = []
 meses = {
-    1 : "gener",
-    2 : "febrer",
-    3 : "març",
-    4 : "abril",
-    5 : "maig",
-    6 : "juny",
-    7 : "juliol",
-    8 : "agost",
-    9 : "septembre",
-    10 : "octubre",
-    11 : "novembre",
-    12 : "decembre",
+    "enero" : 31,
+    "febrer" : 28,
+    "març" : 31,
+    "abril" : 30,
+    "maig" : 31,
+    "juny" : 30,
+    "juliol" : 31,
+    "agost" : 31,
+    "septembre" : 30,
+    "octubre" : 31,
+    "novembre" : 30,
+    "decembre" : 31,
 }
 opcion = ""
 
 def mesos_registres(temperatures, meses):
-    mes = 1
-    print(meses[mes]) 
+    mes_registre = "enero"
+    dies_registres = len(temperatures)
+    for mes in meses:
+        if meses[mes] < dies_registres:
+            dies_registres -= meses[mes]
+            mes_registre = mes
+    return mes_registre, dies_registres
+
 
 def temperatures_setmanals(temperatures):
     print("Escriu les temperatures d'aquesta setmana: ")
@@ -28,13 +34,13 @@ def temperatures_setmanals(temperatures):
         temperatures.append(float(grados))
 
 
+
 def temperatura_mitjana(temperatures):
     mitjana = 0
     for grados in temperatures:
         mitjana += grados
     mitjana = mitjana / (len(temperatures) + 1)
-    print(mitjana)
-    
+    return mitjana
 
 def diferencia_maxima(temperatures):
     grau_max = 0
@@ -45,7 +51,8 @@ def diferencia_maxima(temperatures):
         if grado < grau_min or grau_min == 0:
             grau_min = grado
     diferencia = grau_max - grau_min
-    print(diferencia)
+    return diferencia
+
 
 
 while opcion != "FI":
@@ -56,12 +63,14 @@ while opcion != "FI":
 [DF] Consultar diferència màxima. 
 [FI] Sortir.
 Opció: ''')
+    mes_registre, dies_registres = mesos_registres(temperatures, meses)
     if opcion == "RT":
         temperatures_setmanals(temperatures)
-        mesos_registres(temperatures,meses)
     elif opcion == "MJ":
-        temperatura_mitjana(temperatures)
+        mitjana = temperatura_mitjana(temperatures)
+        print(f"Fins avui {dies_registres + 1} de {mes_registre} la mitjana ha estat de {mitjana} graus. ")
     elif opcion == "DF":
-        diferencia_maxima(temperatures)
+        diferencia = diferencia_maxima(temperatures)
+        print(f"Fins avui {dies_registres + 1} de {mes_registre} la diferència màxima ha estat de {mitjana} graus. ")
     elif opcion == "FI":
         print("Opcion Incorrecta")
