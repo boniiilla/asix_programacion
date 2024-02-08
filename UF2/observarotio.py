@@ -18,14 +18,13 @@ opcion = ""
 def mesos_registres(temperatures, meses):
     mes_registre = "enero"
     dies_registres = len(temperatures)
-    registrado = False
+    mes_cambiado = False
     for mes in meses:
+        if mes_cambiado == False and meses[mes] > dies_registres:
+            mes_registre = mes
+            mes_cambiado = True
         if meses[mes] < dies_registres:
             dies_registres -= meses[mes]
-        if meses[mes] > dies_registres:
-            while registrado == False:
-                mes_registre = mes
-                registrado = True
     return mes_registre, dies_registres
 
 def temperatures_setmanals(temperatures):
