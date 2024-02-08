@@ -18,12 +18,15 @@ opcion = ""
 def mesos_registres(temperatures, meses):
     mes_registre = "enero"
     dies_registres = len(temperatures)
+    registrado = False
     for mes in meses:
         if meses[mes] < dies_registres:
             dies_registres -= meses[mes]
-            mes_registre = mes
+        if meses[mes] > dies_registres:
+            while registrado == False:
+                mes_registre = mes
+                registrado = True
     return mes_registre, dies_registres
-
 
 def temperatures_setmanals(temperatures):
     print("Escriu les temperatures d'aquesta setmana: ")
@@ -32,8 +35,6 @@ def temperatures_setmanals(temperatures):
     temperatura = temperatura.split(" ")
     for grados in temperatura:
         temperatures.append(float(grados))
-
-
 
 def temperatura_mitjana(temperatures):
     mitjana = 0
@@ -52,8 +53,6 @@ def diferencia_maxima(temperatures):
             grau_min = grado
     diferencia = grau_max - grau_min
     return diferencia
-
-
 
 while opcion != "FI":
     opcion = input('''\nBenvingut al registre de temperatures 
