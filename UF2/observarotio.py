@@ -1,6 +1,6 @@
 temperatures = []
 meses = {
-    "enero" : 31,
+    "gener" : 31,
     "febrer" : 28,
     "març" : 31,
     "abril" : 30,
@@ -16,7 +16,7 @@ meses = {
 opcion = ""
 
 def mesos_registres(temperatures, meses):
-    mes_registre = "enero"
+    mes_registre = "gener"
     dies_registres = len(temperatures)
     mes_cambiado = False
     for mes in meses:
