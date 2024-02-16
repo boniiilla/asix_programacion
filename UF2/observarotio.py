@@ -28,6 +28,7 @@ def mesos_registres(temperatures, meses):
     return mes_registre, dies_registres
 
 def temperatures_setmanals(temperatures):
+    temperatures = []
     print("Escriu les temperatures d'aquesta setmana: ")
     temperatura = input()
     temperatura = temperatura.replace(",", ".")
