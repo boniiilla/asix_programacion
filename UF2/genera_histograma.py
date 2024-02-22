@@ -28,18 +28,8 @@ def printear_valores():
     resultados = posibles_resultados()
     valores_resultados = sumar_valores(resultados)
     max_numero = max_valor(valores_resultados)
-    print(f"""2: {valores_resultados[0]}
-3: {valores_resultados[1]}
-4: {valores_resultados[2]}
-5: {valores_resultados[3]}
-6: {valores_resultados[4]}
-7: {valores_resultados[5]}
-8: {valores_resultados[6]}
-9: {valores_resultados[7]}
-10: {valores_resultados[8]}
-11: {valores_resultados[9]}
-12: {valores_resultados[10]}
-El maxim és: {max_numero}""")
-
+    for valor in range(2,13):
+        print(f"{valor}: {valores_resultados[valor - 2]}")
+    print(f"El maxim és: {max_numero}")
 
 printear_valores()
