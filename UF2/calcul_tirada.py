@@ -18,7 +18,7 @@ def calcul_probabilitats(posibilidades):
 def print_codigo():
     print("Escriu el valor a calcular [2 - 12]")
     numero = entrada_teclat()
-    while numero > 12:
+    while numero > 12 or numero < 2:
         print("El valor no és entre 2 i 12.")
         numero = entrada_teclat()
     posibilidades = numero_posibilitats(numero)
