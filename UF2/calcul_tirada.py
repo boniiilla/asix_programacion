@@ -15,12 +15,16 @@ def calcul_probabilitats(posibilidades):
     probabilitat = float(probabilitat)
     return probabilitat
 
-def print_codigo():
-    print("Escriu el valor a calcular [2 - 12]")
-    numero = entrada_teclat()
+def entre_2_i_12(numero):
     while numero > 12 or numero < 2:
         print("El valor no és entre 2 i 12.")
         numero = entrada_teclat()
+    return numero
+
+def print_codigo():
+    print("Escriu el valor a calcular [2 - 12]")
+    numero = entrada_teclat()
+    numero = entre_2_i_12(numero)
     posibilidades = numero_posibilitats(numero)
     probabilitat = calcul_probabilitats(posibilidades)
     print(f"La probabilitat es {probabilitat}%")
