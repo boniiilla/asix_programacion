@@ -35,7 +35,6 @@ def intentos_usuario(palabra_secreta):
 
 def endevina_combinacio():
     palabra_secreta = palabra_secreta_aleatoria()
-    print(palabra_secreta)
     intentos_usuario(palabra_secreta)
 
 endevina_combinacio()
