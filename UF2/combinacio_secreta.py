@@ -15,12 +15,12 @@ def intentos_usuario(palabra_secreta):
     intento_usuario = ""
     letra_encontrada = False
     while intento_usuario != "OOOOO":
-        letra_encontrada = False
         aux_intento_usuario = ["-","-","-","-","-"]
         intento_usuario = ""
         palabra_usuario = input(f"Escriu {len(palabra_secreta)} lletres minúscules: ")
         if len(palabra_usuario) == 5:
             for letra in range(5):
+                letra_encontrada = False
                 if palabra_usuario[letra] == palabra_secreta[letra]:
                     aux_intento_usuario[letra] = "O"
                     letra_encontrada = True
