@@ -1,3 +1,4 @@
-puntos = {"Jugador 1": 5, "Jugador 2": 3}
-for punto in puntos:
-    print (punto)
+prueba = "zbvmo"
+
+prueba = prueba.replace(prueba[0], "-")
+print(prueba)
