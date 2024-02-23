@@ -15,8 +15,8 @@ def intentos_usuario(palabra_secreta):
     intento_usuario = ""
     letra_encontrada = False
     while intento_usuario != "OOOOO":
+        letra_encontrada = False
         aux_intento_usuario = ["-","-","-","-","-"]
-        
         intento_usuario = ""
         palabra_usuario = input(f"Escriu {len(palabra_secreta)} lletres minúscules: ")
         if len(palabra_usuario) == 5:
@@ -27,7 +27,7 @@ def intentos_usuario(palabra_secreta):
                 for letra_usuario in range(5):
                     if palabra_secreta[letra] == palabra_usuario[letra_usuario] and letra != letra_usuario and letra_encontrada == False:
                         aux_intento_usuario[letra_usuario] = "X"
-                        letra_encontrada == False
+                        letra_encontrada == True
             for valor in aux_intento_usuario:
                 intento_usuario += valor
             if intento_usuario != "OOOOO" :
