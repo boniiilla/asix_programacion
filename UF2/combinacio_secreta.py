@@ -23,7 +23,7 @@ def intentos_usuario(palabra_secreta):
                     aux_intento_usuario[letra] = "O"
                 for letra_usuario in range(5):
                     if palabra_secreta[letra] == palabra_usuario[letra_usuario] and letra != letra_usuario:
-                        aux_intento_usuario[letra] = "X"
+                        aux_intento_usuario[letra_usuario] = "X"
             for valor in aux_intento_usuario:
                 intento_usuario += valor
             if intento_usuario != "OOOOO" :
