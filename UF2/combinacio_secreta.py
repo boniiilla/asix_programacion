@@ -26,12 +26,12 @@ def intentos_usuario(palabra_secreta):
                         aux_intento_usuario[letra] = "X"
             for valor in aux_intento_usuario:
                 intento_usuario += valor
+            if intento_usuario != "OOOOO" :
+                print(f"La resposta es [{intento_usuario}]. Continua intentant-ho!")
+            else:
+                print(f"La resposta es [{intento_usuario}]. Has encertat!")
         else:
             print("Mida de paraula no valida.")
-        if intento_usuario != "OOOOO":
-            print(f"La resposta es [{intento_usuario}]. Continua intentant-ho!")
-        else:
-            print(f"La resposta es [{intento_usuario}]. Has encertat!")
 
 def endevina_combinacio():
     palabra_secreta = palabra_secreta_aleatoria()
