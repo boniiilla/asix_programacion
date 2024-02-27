@@ -1,5 +1,9 @@
 fun main() {
-    println("Ingrese el primer numero: ")
-    val num1 = readLine()
-    println("$num1")
+    println("Ingresa el numero que quieres hacer [1: Sumar | 2: Restar | 3: Multiplicar | 4: Dividir] : ")
+    val opcion = readLine()
+}
+
+fun primer_numero() {
+    println("Ingresa un primer numero: ")
+    val numero_uno = readLine()
 }
