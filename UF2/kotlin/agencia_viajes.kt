@@ -1,10 +1,10 @@
 fun lista_viajes(): List<String> {
-    val listadeviajes: List<String?> = listOf()
+    val listadeviajes = listOf("primer viaje")
 
     return listadeviajes
 }
 
 fun main() {
-    val listadeviajes: List<String?> = lista_viajes()
+    val listadeviajes = lista_viajes()
     println(listadeviajes)
 } 
