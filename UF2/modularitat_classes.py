@@ -14,3 +14,11 @@ class movimiento:
 
     def moure_avall(self):
         self.coordenada = (self.x, self.y - 1)
+
+ejecucion = movimiento()
+
+ejecucion.moure_dreta()
+print(f"Nova coordenada després de moure a la dreta: {ejecucion.coordenada}")
+
+ejecucion.moure_amunt()
+print(f"Nova coordenada després de moure amunt: {ejecucion.coordenada}")
