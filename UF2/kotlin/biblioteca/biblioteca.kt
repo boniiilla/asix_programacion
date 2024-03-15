@@ -1,37 +1,35 @@
-class Libro (titulo: String, autor: String, cantidad: Int) {
-    var titulo: String
-    var autor: String
-    var cantidad: Int
-
-    constructor() {
-        this.titulo = titulo
-        this.autor = autor
-        this.cantidad = cantidad
+class Libro (var titulo: String, var autor: String, var cantidad: Int) {
+    fun informacion() {
+        println("Titulo: ${this.titulo}, Autor: ${this.autor}, Cantidad: ${this.cantidad}")
     }
 
-    fun informacion() {
-        println("Titulo: $this.titulo, Autor: $this.autor, Cantidad: $this.cantidad")
+    fun prestar() {
+        if (this.ejemplares > 0) {
+            this.ejemplares--
+            println("Libro prestado: ${this.titulo}, autor: ${this.autor}")
+        } else {
+            println("No hay ejemplares disponibles de ${this.libro}")
+        }
     }
 }
 
-class Socio (nombre: String, apellido: String, id: Int) {
-    var nombre: String
-    var apellido: String
-    var id: Int
-
-    constructor() {
-        this.nombre = titulo
-        this.apellido = autor
-        this.id = cantidad
+class Socio (var nombre: String, var apellido: String, var id: Int) {
+    fun informacion() {
+        println("Nombre: ${this.nombre}, Apellido: ${this.apellido}, ID: ${this.id}")
     }
 
-    fun informacion() {
-        println("Nombre: $this.nombre, Apellido: $this.apellido, ID: $this.id")
+    fun solicitarPrestamo(libro: Libro, fecha: String) {
+        println("Prestamos solicitado por ${this.nombre} ${this.apellido}, numero de socio ${this.id}, fecha de prestamo ${this.fecha}")
+        var prestamo = Prestamo(libro, this, fecha)
+        prestamo.registrarPrestamo()
     }
 }
 
-class Prestamo {
-
+class Prestamo (var libro: Libro, var socio: Socio, var fecha: String) {
+    fun registrarPrestamo() {
+        println("Prestamo registrado: Libro ${this.titulo}, por el socio ${socio.nombre}")
+        libro.prestar()
+    }
 }
 
 class Main {
@@ -44,10 +42,10 @@ class Main {
     // val prestamo1 : Prestamo = Prestamo(libro1, socio1, "2024-03-15")
     // val prestamo2 : Prestamo = Prestamo(libro2, socio2, "2024-03-15")
 
-    // prestamo1.registrarPrestamo()
+    socio1.solicitarPrestamo(libro1, "2024-03-15")
     libro1.informacion()
     socio1.informacion()
-    // prestamo1.devolverPrestamo()
+    socio1.devolverPrestamo(libro1, "2024-03-15")
     libro1.informacion()
 }
 
