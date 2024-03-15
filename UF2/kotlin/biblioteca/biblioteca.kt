@@ -1,41 +1,30 @@
-class Llibre {
-    var libros: MutableMap<String, String>
-    var libro: String
-    var autor: String
-
-    constructor() {
-        this.libros = mutableMapOf(
-            "Harry Potter 1" to "J.K. Rowling"
-        )
-        this.libro = ""
-        this.autor = ""
-    }
-
-    fun anadir_libro() {
-        println("Introduce el libro que quieres añadir:")
-        this.libro = readLine()!!.toString()
-        println("Introduce el autor del libro:")
-        this.autor = readLine()!!.toString()
-        
-        this.libros.put(this.libro, this.autor)
-    }
+class Libro {
+    
 }
 
-class Soci {
-
+class Socio {
+    
 }
 
-class Prestec {
+class Prestamo {
 
 }
 
 class Main {
+    val libro1: Libro = Libro("LOTR", "J.R.R. Tolkien", 2)
+    val libro2: Libro = Libro("1984", "J.R.R. Tolkien", 2)
 
-    constructor() {
-        var llibre: Llibre = Llibre()
-        llibre.anadir_libro()
-        println("Estos son los libros que hay ${llibre.libros}")
-    }
+    val socio1: Socio = Socio("Izan", "Lozano", 101)
+    val socio2: Socio = Socio("Carlos", "Bonilla", 202)
+
+    val prestamo1 : Prestamo = Prestamo(libro1, socio1, "2024-03-15")
+    val prestamo1 : Prestamo = Prestamo(libro2, socio2, "2024-03-15")
+
+    prestamo1.registrarPrestamo()
+    libro1.informacion()
+    socio1.informacion()
+    prestamo1.devolverPrestamo()
+    libro1.informacion()
 }
 
 fun main() {
