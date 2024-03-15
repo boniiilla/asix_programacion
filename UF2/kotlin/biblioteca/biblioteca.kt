@@ -50,5 +50,6 @@ class Main {
 }
 
 fun main() {
-    Main()
+    var x = Main()
+    x.main()
 }
