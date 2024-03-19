@@ -5,7 +5,7 @@ class Libro (var titulo: String, var autor: String, var cantidad: Int) {
 
     fun prestar() {
         if (this.ejemplares > 0) {
-            this.ejemplares--
+            this.ejemplares --
             println("Libro prestado: ${this.titulo}, autor: ${this.autor}")
         } else {
             println("No hay ejemplares disponibles de ${this.libro}")
@@ -52,4 +52,4 @@ class Main {
 fun main() {
     var x = Main()
     x.main()
-}
+} 
