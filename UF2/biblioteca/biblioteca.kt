@@ -4,12 +4,17 @@ class Libro (var titulo: String, var autor: String, var cantidad: Int) {
     }
 
     fun prestar() {
-        if (this.ejemplares > 0) {
-            this.ejemplares --
+        if (this.cantidad > 0) {
+            this.cantidad--
             println("Libro prestado: ${this.titulo}, autor: ${this.autor}")
         } else {
             println("No hay ejemplares disponibles de ${this.libro}")
         }
+    }
+
+    fun devolver() {
+        this.cantidad++
+        println("Libro devuelto: ${this.titulo}, Autor: ${this.autor}")
     }
 }
 
@@ -22,6 +27,12 @@ class Socio (var nombre: String, var apellido: String, var id: Int) {
         println("Prestamos solicitado por ${this.nombre} ${this.apellido}, numero de socio ${this.id}, fecha de prestamo ${this.fecha}")
         var prestamo = Prestamo(libro, this, fecha)
         prestamo.registrarPrestamo()
+    }
+
+    fun devolverPrestamo(libro: Libro) {
+        println("Devolución de préstamo por ${this.nombre} ${this.apellido}, Número de Socio: ${this.id}")
+        val prestamo = Prestamo(libro, this)
+        prestamo.devolverPrestamo()
     }
 }
 
