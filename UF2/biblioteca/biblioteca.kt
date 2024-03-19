@@ -41,6 +41,11 @@ class Prestamo (var libro: Libro, var socio: Socio, var fecha: String) {
         println("Prestamo registrado: Libro ${this.titulo}, por el socio ${socio.nombre}")
         libro.prestar()
     }
+
+    fun devolverPrestamo() {
+        println("Devolución de préstamo - Libro: ${libro.titulo}, Socio: ${socio.nombre} ${socio.apellido}")
+        libro.devolver()
+    }
 }
 
 class Main {

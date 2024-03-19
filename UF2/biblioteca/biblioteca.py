@@ -30,10 +30,12 @@ class Socio:
     def solicitarPrestamo(self, libro, fecha):
         print(f"Prestamos solicitado por {self.nombre} {self.apellido}, Número de socio {self.id}, fecha de prestamo {fecha}")
         prestamo = Prestamo(libro, self, fecha)
+        Prestamo.registrarPrestamo()
 
     def devolverPrestamo(self, libro, fecha):
         print(f"Devolución de préstamo por {self.nombre} {self.apellido}, Número de Socio: {self.id}, fecha de prestamo {fecha}")
         prestamo = Prestamo(libro, self, fecha)
+        Prestamo.devolverPrestamo()
 
 
 class Prestamo:
@@ -42,9 +44,13 @@ class Prestamo:
         self.socio: Socio = socio
         self.fecha: str = fecha
     
-    def registrarPrestamo(self, libro):
-        print(f"Prestamo registrado: Libro {self.titulo}, por el socio {self.nombre}")
-        libro.prestar()
+    def registrarPrestamo(self, libro, socio):
+        print(f"Prestamo registrado: Libro {libro.titulo}, por el socio {socio.nombre}")
+        Libro.prestar(self)
+
+    def devolverPrestamo(self, libro, socio):
+        print(f"Devolución de préstamo: Libro: {libro.titulo}, Socio: {socio.nombre} {socio.apellido}")
+        Libro.devolver(self)
 
 class Main:
     libro1: Libro = Libro("LOTR", "J.R.R. Tolkien", 2)
