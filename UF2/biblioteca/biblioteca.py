@@ -28,29 +28,28 @@ class Socio:
         print(f"Nombre: {self.nombre}, Apellido: {self.apellido}, ID: {self.id}")
     
     def solicitarPrestamo(self, libro, fecha):
-        print(f"Prestamos solicitado por {self.nombre} {self.apellido}, Número de socio {self.id}, fecha de prestamo {fecha}")
-        prestamo = Prestamo(libro, self, fecha)
-        Prestamo.registrarPrestamo()
+        print(f"Prestamo solicitado por {self.nombre} {self.apellido}, Número de socio {self.id}")
+        prestamo = Prestamo(libro, self)
+        prestamo.registrarPrestamo(fecha)
 
-    def devolverPrestamo(self, libro, fecha):
-        print(f"Devolución de préstamo por {self.nombre} {self.apellido}, Número de Socio: {self.id}, fecha de prestamo {fecha}")
-        prestamo = Prestamo(libro, self, fecha)
-        Prestamo.devolverPrestamo()
+    def devolverPrestamo(self, libro):
+        print(f"Devolución de préstamo por {self.nombre} {self.apellido}, Número de Socio: {self.id}")
+        prestamo = Prestamo(libro, self)
+        prestamo.devolverPrestamo()
 
 
 class Prestamo:
-    def __init__(self, libro, socio, fecha) -> None:
+    def __init__(self, libro, socio) -> None:
         self.libro: Libro = libro
         self.socio: Socio = socio
-        self.fecha: str = fecha
     
-    def registrarPrestamo(self, libro, socio):
-        print(f"Prestamo registrado: Libro {libro.titulo}, por el socio {socio.nombre}")
-        Libro.prestar(self)
+    def registrarPrestamo(self, fecha):
+        print(f"Prestamo registrado: Libro {self.libro.titulo}, por el socio {self.socio.nombre}, con fecha {fecha}")
+        Libro.prestar(self.libro)
 
-    def devolverPrestamo(self, libro, socio):
-        print(f"Devolución de préstamo: Libro: {libro.titulo}, Socio: {socio.nombre} {socio.apellido}")
-        Libro.devolver(self)
+    def devolverPrestamo(self):
+        print(f"Devolución de préstamo: Libro: {self.libro.titulo}, Socio: {self.socio.nombre} {self.socio.apellido}")
+        Libro.devolver(self.libro)
 
 class Main:
     libro1: Libro = Libro("LOTR", "J.R.R. Tolkien", 2)
@@ -62,5 +61,5 @@ class Main:
     socio1.solicitarPrestamo(libro1, "2024-03-15")
     libro1.informacion()
     socio1.informacion()
-    socio1.devolverPrestamo(libro1, "2024-03-15")
+    socio1.devolverPrestamo(libro1)
     libro1.informacion()
