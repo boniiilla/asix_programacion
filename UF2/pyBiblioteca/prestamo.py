@@ -1,3 +1,6 @@
+from libro import Libro
+from socio import Socio
+
 class Prestamo:
     def __init__(self, libro, socio) -> None:
         self.libro: Libro = libro

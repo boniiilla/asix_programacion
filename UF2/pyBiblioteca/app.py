@@ -1,3 +1,6 @@
+from libro import Libro
+from socio import Socio
+
 class Main:
     libro1: Libro = Libro("LOTR", "J.R.R. Tolkien", 2)
     libro2: Libro = Libro("1984", "J.R.R. Tolkien", 2)
