@@ -13,3 +13,5 @@ class Main:
     socio1.informacion()
     socio1.devolverPrestamo(libro1)
     libro1.informacion()
+
+app = Main()
