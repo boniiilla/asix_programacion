@@ -1,10 +1,10 @@
 package Biblioteca
 
-class Libro(val titulo: String, val autor: String, var cantidad: Int) {
+class Libro(val titulo: String, val autor: String, var ejemplaresDisponibles: Int) {
 
     fun prestar() {
-        if (cantidad > 0) {
-            cantidad--
+        if (ejemplaresDisponibles > 0) {
+            ejemplaresDisponibles--
             println("Libro prestado: $titulo, Autor: $autor")
         } else {
             println("No hay ejemplares disponibles de $titulo")
@@ -12,11 +12,11 @@ class Libro(val titulo: String, val autor: String, var cantidad: Int) {
     }
 
     fun devolver() {
-        cantidad++
+        ejemplaresDisponibles++
         println("Libro devuelto: $titulo, Autor: $autor")
     }
 
     fun informacion() {
-        println("Título: $titulo, Autor: $autor, Ejemplares Disponibles: $cantidad")
+        println("Título: $titulo, Autor: $autor, Ejemplares Disponibles: $ejemplaresDisponibles")
     }
 }
