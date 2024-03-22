@@ -1,7 +1,6 @@
 from libro import Libro
 from prestamo import Prestamo
 
-
 class Socio:
     def __init__(self, nombre, apellido, id) -> None:
         self.nombre: str = nombre

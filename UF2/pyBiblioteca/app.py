@@ -1,5 +1,6 @@
 from libro import Libro
 from socio import Socio
+from prestamo import Prestamo
 
 class Main:
     libro1: Libro = Libro("LOTR", "J.R.R. Tolkien", 2)
