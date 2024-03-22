@@ -1,5 +1,7 @@
 package Biblioteca
 
+import Biblioteca.Libro
+
 class Socio(val nombre: String, val apellido: String, val numeroSocio: Int) {
 
     fun solicitarPrestamo(libro: Libro, fechaPrestamo: String) {
@@ -17,3 +19,4 @@ class Socio(val nombre: String, val apellido: String, val numeroSocio: Int) {
     fun informacion() {
         println("Nombre: $nombre, Apellido: $apellido, Número de Socio: $numeroSocio")
     }
+}
