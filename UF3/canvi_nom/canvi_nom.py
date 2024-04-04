@@ -1,6 +1,39 @@
 import os
 
-ruta = input("Introduce la ruta del fichero o directorio: ")
-fd = open(ruta, 'w')
+'''
+1. Renombrar fichero
+2.1. Obtener el nombre del fichero
+2.2. Renombrar el fichero
+3.1.1. Pedir al usuario la ruta
+3.2.1. Comprobar el archivo
+3.2.2. Separar la extension de la ruta
+3.2.3. Renombrar el fichero
+'''
 
-os.rename(ruta, 'document')
+class Renombrar:
+    def inicio(self):
+        fichero = obtener_nombre()
+        renombrar_fichero(fichero)
+    
+    def obtener_nombre(self):
+        fichero = input("Escribe el nombre de la ruta: ")
+        return fichero
+    
+    def renombrar_fichero(self, fichero):
+        existe = fichero_existe(fichero)
+        if existe:
+            nuevo_nombre = separar_extension(fichero)
+            renombrar(fichero, nuevo_nombre)
+        else:
+            print(f"No existe el fichero {fichero}")
+    def fichero_existe(self, fichero):
+        existe = os.path.exists(fichero)
+        return existe
+    
+    def separar_extension(self, fichero):
+        pos = fichero.rfind('.')
+        return fichero[:pos]
+    
+    def renombrar(self, fichero, nuevo_nombre):
+        os.rename(fichero, nuevo_nombre)
+        
