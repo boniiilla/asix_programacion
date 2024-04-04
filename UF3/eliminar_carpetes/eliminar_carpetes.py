@@ -13,3 +13,30 @@ import os
 class Eliminar:
     def inicio(self):
         carpeta = self.obtener_carpeta()
+        self.eliminar_carpeta(carpeta)
+
+    def obtener_carpeta(self):
+        carpeta = input("Introduce el nombre de la ruta: ")
+        return carpeta
+    
+    def eliminar_carpeta(self, carpeta):
+        existe = self.carpeta_existe(carpeta)
+        #subcarpetas = self.subcarpetas_existe()
+        if existe:
+            #if subcarpetas:
+            #    ...
+            #else:
+            self.eliminar(carpeta)
+        else:
+            print(f"No existe la carpeta {carpeta}")
+    
+    def carpeta_existe(self, carpeta):
+        existe = os.path.exists(carpeta)
+        return existe
+    
+    def eliminar(self, carpeta):
+        os.remove(carpeta)
+
+app = Eliminar()
+
+app.inicio()
