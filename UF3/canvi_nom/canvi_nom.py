@@ -12,18 +12,18 @@ import os
 
 class Renombrar:
     def inicio(self):
-        fichero = obtener_nombre()
-        renombrar_fichero(fichero)
+        fichero = self.obtener_nombre()
+        self.renombrar_fichero(fichero)
     
     def obtener_nombre(self):
         fichero = input("Escribe el nombre de la ruta: ")
         return fichero
     
     def renombrar_fichero(self, fichero):
-        existe = fichero_existe(fichero)
+        existe = self.fichero_existe(fichero)
         if existe:
-            nuevo_nombre = separar_extension(fichero)
-            renombrar(fichero, nuevo_nombre)
+            nuevo_nombre = self.separar_extension(fichero)
+            self.renombrar(fichero, nuevo_nombre)
         else:
             print(f"No existe el fichero {fichero}")
     def fichero_existe(self, fichero):
@@ -36,4 +36,6 @@ class Renombrar:
     
     def renombrar(self, fichero, nuevo_nombre):
         os.rename(fichero, nuevo_nombre)
-        
+
+app = Renombrar()
+app.inicio()
