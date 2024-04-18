@@ -2,7 +2,7 @@ package calculadora;
 
 class Pantalla
 {
-    public static void Escribir(String texto){
+    public static void escribir(String texto){
         System.out.println(texto);
     }
 }
