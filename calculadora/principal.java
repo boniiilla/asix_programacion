@@ -1,6 +1,6 @@
 package calculadora;
 
-class principal {
+class Principal {
     public static void main(String[] args) {
         Pantalla.Escribir("Hola Mundo");
     }
