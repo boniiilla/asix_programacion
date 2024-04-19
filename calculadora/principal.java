@@ -14,6 +14,6 @@ class Principal {
             Pantalla.escribir(opcion);
         };
 
-        String opcion = Teclado.leer(opciones);
+        String opcion = Teclado.leer("Escoge la opcion: ");
     }
 }
