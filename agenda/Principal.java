@@ -8,7 +8,7 @@ class Principal {
     public void retrocederPagina() {
 
     };
-    public Pagina llegirPagina() {
+    public void llegirPagina() {
 
     };
 
