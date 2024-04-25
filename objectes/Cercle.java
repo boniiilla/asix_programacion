@@ -2,10 +2,10 @@ package objectes;
 
 class Cercle {
     private double radi;
-    private double area;
-    private double perimetre;
+    private double area = (3.14 * (radi * radi));
+    private double perimetre = (2 * 3.14 * radi);
     public Cercle(double radi){
-        this.radi = radi;
+        this.radi = radi;        
     }
 
     public double getRadi(){
