@@ -8,11 +8,11 @@ class Main {
         estudiante.setNom("Izan");
         estudiante.setEdat(20);
         
-        System.out.println(estudiante.getNom());
-        System.out.println(estudiante.getEdat());
+        System.out.println("Nombre: " +estudiante.getNom());
+        System.out.println("Edad: " + estudiante.getEdat());
 
         Cercle medidas = new objectes.Cercle(10.00);
 
-        System.out.println(medidas.getArea());
+        System.out.println("Area del circulo: " + medidas.getArea());
     }
 }
