@@ -1,0 +1,5 @@
+package codificació;
+
+class main {
+    
+}
