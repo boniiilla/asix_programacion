@@ -2,8 +2,6 @@ package objectes;
 
 class Cercle {
     private double radi;
-    private double area = (3.14 * (radi * radi));
-    private double perimetre = (2 * 3.14 * radi);
     public Cercle(double radi){
         this.radi = radi;        
     }
@@ -13,14 +11,10 @@ class Cercle {
     }
 
     public double getArea(){
-        return this.area;
+        return (3.14 * (this.radi * this.radi));
     }
 
     public double getPerimetre(){
-        return this.perimetre;
-    }
-
-    public void setRadi(double r){
-        this.radi = r;
+        return (2 * 3.14 * this.radi);
     }
 }
