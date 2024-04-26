@@ -37,7 +37,7 @@ class Pacman {
         for (String opcion :opciones) {
             Pantalla.escribir(opcion);
         };
-
+        /*Cada vez que leamos alguno de los caracteres WASD sumaremos o restaremos posiciones */
         String opcion = Teclado.leer("");
 
         if (opcion == "w") {
@@ -50,4 +50,8 @@ class Pacman {
             this.newposX++;
         };
     }
+
+    
+
+
 }
