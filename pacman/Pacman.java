@@ -41,13 +41,13 @@ class Pacman {
         String opcion = Teclado.leer("");
 
         if (opcion == "w") {
-            newposY++;
+            this.newposY++;
         } else if (opcion == "a") {
-            newposX--;
+            this.newposX--;
         } else if (opcion == "s") {
-            newposY--;
+            this.newposY--;
         } else if (opcion == "d") {
-            newposX++;
+            this.newposX++;
         };
     }
 }
