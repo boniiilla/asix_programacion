@@ -19,13 +19,13 @@ class Pacman {
     public int getnewPosY(){
         return this.newposY;
     }
-    public int getpuntutacio(){
+    public int getpuntuacio(){
         return this.puntuacio;
     }
     public int getLifes(){
         return this.lifes;
     }
-
+    /*Altres metodes Pacman*/
     public void move(){
         String[] opciones = {
             "W - Arriba",
@@ -50,8 +50,20 @@ class Pacman {
             this.newposX++;
         };
     }
+    public void pickupBola(){
 
-    
+    }
+    public void pickupBolaEspecial() {
 
+    }
+    public void pickupFruita() {
+
+    }
+    public void loseLife() {
+
+    }
+    public void detectColisionFantasma(Blinky blinky, Inky inky, Pinky pinky, Clyde clyde) {
+        
+    }
 
 }
