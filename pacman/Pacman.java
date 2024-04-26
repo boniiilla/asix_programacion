@@ -26,5 +26,28 @@ class Pacman {
         return this.lifes;
     }
 
-    
+    public void move(){
+        String[] opciones = {
+            "W - Arriba",
+            "A - Derecha",
+            "S - Abajo",
+            "D - Izquierda"
+        };
+
+        for (String opcion :opciones) {
+            Pantalla.escribir(opcion);
+        };
+
+        String opcion = Teclado.leer("");
+
+        if (opcion == "w") {
+            newposY++;
+        } else if (opcion == "a") {
+            newposX--;
+        } else if (opcion == "s") {
+            newposY--;
+        } else if (opcion == "d") {
+            newposX++;
+        };
+    }
 }
