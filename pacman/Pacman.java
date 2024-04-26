@@ -62,8 +62,8 @@ class Pacman {
     public void loseLife() {
 
     }
-    public void detectColisionFantasma(Blinky blinky, Inky inky, Pinky pinky, Clyde clyde) {
-        
+    public void detectColisionFantasma(Blinky b, Inky i, Pinky p, Clyde c) {
+
     }
 
 }
