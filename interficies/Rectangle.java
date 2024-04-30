@@ -1,0 +1,5 @@
+package interficies;
+
+class Rectangle {
+    
+}
