@@ -7,19 +7,19 @@ abstract interface FiguraGeometrica{
 }
 
 abstract class Figura2D implements FiguraGeometrica {
-    private int base;
-    private int altura;
+    private double base;
+    private double altura;
 
-    public Figura2D(int base, int altura){
+    public Figura2D(double base, double altura){
         this.base = base;
         this.altura = altura;
     }
 
-    public int getBase() {
+    public double getBase() {
         return this.base;
     }
 
-    public int getArea() {
+    public double getArea() {
         return this.altura;
     }
 }
