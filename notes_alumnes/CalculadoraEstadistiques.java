@@ -1,20 +1,24 @@
 package notes_alumnes;
 
-class CalculadoraEstadistiques {
-    public double calcularMitjana(double[] notes){
-        double mitjana;
-        double suma_notes = 0;
 
-        for (double num : notes){
-            suma_notes = num + suma_notes;
+class CalculadoraEstadistiques {
+    public static double calcularMitjana(double[] notes){
+        double suma = 0.0;
+
+        for (double nota : notes) {
+            suma += nota;
         }
 
-        int size_notes = notes.length;
-
-        mitjana = suma_notes / size_notes;
-
-        return mitjana;
+        return suma / notes.length;
     }
 
-    
+    public static double calcularMaxim(double[] notes) {
+        Array.sort(notes);
+        return notes[notes.length - 1];
+    }
+
+    public static double calcularMinim(double[] notes) {
+        Array.sort(notes);
+        return notes[0];
+    }
 }
