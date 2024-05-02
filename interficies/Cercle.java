@@ -15,5 +15,4 @@ class Cercle extends interficies.Figura2D {
     public void calcularPerimetre() {
     ;
     }
-    
 }
