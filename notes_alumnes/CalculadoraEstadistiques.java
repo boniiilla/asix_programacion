@@ -1,6 +1,5 @@
 package notes_alumnes;
 
-
 class CalculadoraEstadistiques {
     public static double calcularMitjana(double[] notes){
         double suma = 0.0;
