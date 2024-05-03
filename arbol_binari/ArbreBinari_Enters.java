@@ -9,7 +9,7 @@ public class ArbreBinari_Enters {
         arbol_enteros.put(numPadre, fills);
     }
 
-    public Integer[] obtenerArbol(Integer numPadre) {
+    public Integer[] mostrarArbol(Integer numPadre) {
         return arbol_enteros.get(numPadre);
     }
 }
