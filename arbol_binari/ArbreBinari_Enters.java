@@ -1,20 +1,15 @@
 package arbol_binari;
 
-import java.util.Scanner;
 import java.util.Hashtable;
 
 public class ArbreBinari_Enters {
+    Hashtable<Integer, Integer[]> arbol_enteros = new Hashtable<Integer, Integer[]>();
 
-    Hashtable<String, Hashtable<Integer, Integer>> binari_enter = new Hashtable<String, Hashtable<Integer, Integer>>();
-    
-    private int fondaria;
-    private int raiz;
-    private int num_derecha;
-    private int num_izquierda;
-
-    public void registrarArbol(){
-        System.out.println("De quina fondaria es el arbre?");
-        
+    public void registrarArbol(Integer numPadre, Integer[] fills){
+        arbol_enteros.put(numPadre, fills);
     }
 
+    public Integer[] obtenerArbol(Integer numPadre) {
+        return arbol_enteros.get(numPadre);
+    }
 }
