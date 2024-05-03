@@ -1,13 +1,12 @@
 package notes_alumnes;
 
-import java.util.Dictionary;
-import java.util.Scanner;
+import java.util.Hashtable;
 
-public class GestorNotes {
+public class GestorNotes
+{
+    Hashtable<String, double[]> alumnes = new Hashtable<String, double[]>();
 
-    Dictionary<String, double[]> alumnes = new Dictionary<String, double[]>();
-
-    public void registrarNotes(String nomAlumne, double[] notes){
+    public void registrarNotes(String nomAlumne, double[] notes) {
         alumnes.put(nomAlumne, notes);
     }
 
