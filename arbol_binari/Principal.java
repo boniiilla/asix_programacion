@@ -1,5 +1,5 @@
 package arbol_binari;
 
-public class ArbreBinari {
+public class Principal {
     
 }
