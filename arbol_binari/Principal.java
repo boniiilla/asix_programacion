@@ -17,7 +17,7 @@ public class Principal {
         System.out.println("Introdueix el numero pare:");
         int numero_pare = sc.nextInt();
 
-        Integer[] fills = new Integer[1];
+        Integer[] fills = new Integer[1]; 
         for (int i = 1; i < fondaria; i++){
             for (int j = 0; j < Math.pow(2, i); j++){
                 System.out.println("Introdueix els 2 fills per al pare: " + numero_pare);
