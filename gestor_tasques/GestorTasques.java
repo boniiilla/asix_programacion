@@ -12,6 +12,5 @@ public class GestorTasques {
         prioritat_estat.put(prioritat, estat);
 
         tasques.put(tasca, prioritat_estat);
-        
     }
 }
