@@ -42,9 +42,7 @@ class LlistaLlibres<T> {
         books = new HashMap<T, String[]>();
     }
 
-    public void addBooks(T genere, String title){
-        
-    }
+    public void addBooks(T genere, String title){}
 
     public void deleteBook(){}
 
