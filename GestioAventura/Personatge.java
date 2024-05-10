@@ -31,6 +31,30 @@ class Personatge {
         this.puntsMana = this.puntsMana + puntsMana;
     }
 
+    public String getNom(){
+        return this.nom;
+    }
+    
+    public int getNivell(){
+        return this.nivell;
+    }
+
+    public int getPuntsVida(){
+        return this.puntsVida;
+    }
+
+    public int getPuntsMana(){
+        return this.puntsMana;
+    }
+
+    public String getArma(){
+        return this.arma;
+    }
+
+    public String getArmadura(){
+        return this.armadura;
+    }
+
     public String getPersonatge() {
         return "Nom: " + this.nom +
         "\nNivell: " + this.nivell +
