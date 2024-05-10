@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<personatges>
+    <personatge>
+        <nom>Gandalf</nom>
+        <nivell>10</nivell>
+        <puntsDeVida>100</puntsDeVida>
+        <puntsDeMana>150</puntsDeMana>
+        <arma>Gràvida de llum</arma>
+        <armadura>Roba de mag</armadura>
+    </personatge>
+    <personatge>
+        <nom>Aragorn</nom>
+        <nivell>8</nivell>
+        <puntsDeVida>120</puntsDeVida>
+        <puntsDeMana>80</puntsDeMana>
+        <arma>Andúril</arma>
+        <armadura>Elfos</armadura>
+    </personatge>
+</personatges>
+
