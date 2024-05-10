@@ -52,5 +52,4 @@ class Main {
         Personatge harrypotter = new Personatge("Harry Potter", 1, 750, 100, "Varita Sagrada", "Uniforme Grifingdor");
         System.out.println(harrypotter.getPersonatge());
     }
-
 }
