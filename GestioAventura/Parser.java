@@ -82,6 +82,9 @@ class Parser {
         }
     }
 
-    private static void CharacteristicLoad() throws Exception {}
+    private static void CharacteristicLoad() throws Exception {
+        Personatge voldemort = new Personatge("Voldemort", 1, 1000, 150, "Varita mortal", "Capa");
+        System.out.println(voldemort.getPersonatge());
+    }
 
 }
