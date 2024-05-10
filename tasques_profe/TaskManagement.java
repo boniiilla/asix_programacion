@@ -76,7 +76,7 @@ class Main {
         TaskManagement manager = new TaskManagement();
 
         System.out.println("Add task:");
-        manager.addTask("Hacer ejercicio", "Alta");
+        manager.addTask("Hacer ejercicio", "Media");
         System.out.println("Print all tasks:");
         manager.printAllTask();
         System.out.println("Mark as done");
