@@ -58,7 +58,7 @@ class Parser {
                     if ( (n.getNodeType() == Node.TEXT_NODE)||
                         (n.getNodeType() == Node.CDATA_SECTION_NODE) ) {
                 
-                        text += n.getNodeValue();
+                        text += "Nom: " + n.getNodeValue();
                     }
                 }
 
@@ -71,10 +71,10 @@ class Parser {
                         if ( (p.getNodeType() == Node.TEXT_NODE)||
                             (p.getNodeType() == Node.CDATA_SECTION_NODE) ) {
                     
-                            text += " " + p.getNodeValue();
+                            text += "\nNivell: " + p.getNodeValue();
                         }
                     }
-                    System.out.println("\t" + text);
+                    System.out.println(text);
                 }
             }
         } catch (Exception ex) {
