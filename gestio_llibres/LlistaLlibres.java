@@ -3,43 +3,13 @@ package gestio_llibres;
 import java.util.HashMap;
 import java.util.ArrayList;
 
-class Novela {
-    private String title;
-    public Novela(String title){
-        this.title = title;
-    }
-
-    public String getTitle(){
-        return title;
-    }
-}
-
-class CienciaFiccio {
-    private String title;
-    public CienciaFiccio(String title){
-        this.title = title;
-    }
-
-    public String getTitle(){
-        return title;
-    }
-}
-
-class Poesia {
-    private String title;
-    public Poesia(String title){
-        this.title = title;
-    }
-
-    public String getTitle(){
-        return title;
-    }
-}
 
 class LlistaLlibres<T> {
+    private HashMap<Integer, Book> biblio;
     private HashMap<T, ArrayList<Book>> books;
 
     public LlistaLlibres(){
+        biblio = new HashMap<Integer, Book>();
         books = new HashMap<T, ArrayList<Book>>();
         books.put((T) "Poesia", new ArrayList<Book>());
         books.put((T) "Novela", new ArrayList<Book>());
@@ -49,39 +19,43 @@ class LlistaLlibres<T> {
     public void addBooks(String title, T genere){
         Book libro = new Book(title);
         books.get(genere).add(libro);
+        biblio.put(libro.getId(), libro);
     }
-    public void deleteBook(String title, T genere){
-        books.get(genere).remove(title);
+    public void deleteBook(int bookId){
+        biblio.remove(bookId);
     }
 
-    public void searchBook(String title){}
+    public void searchBook(String title){
+        
+    }
 
     public void printAllBooks(){
-        for (Book llibre: books.get((T)"Ciencia-Ficcio")) {
-            System.out.println(llibre);
-        }
-        for (Book llibre: books.get((T)"Novela")) {
-            System.out.println(llibre);
-        }
-        for (Book llibre: books.get((T)"Poesia")) {
-            System.out.println(llibre);
-        }
+        biblio.forEach((key, book) -> {
+            System.out.println(book);
+        });
     }
 }
 
 class Book {
+    private static int numInstances = 0;
     private String titol;
+    private int id;
 
     public Book(String titol) {
         this.titol = titol;
+        id = ++numInstances;
     }
 
     public String getTitol(){
         return this.titol;
     }
 
+    public int getId(){
+        return id;
+    }
+
     public String toString(){
-        return this.titol;
+        return "ID: " + id + " Name: " + this.titol;
     }
 }
 
@@ -94,10 +68,8 @@ class Main {
         System.out.println("Totes els llibres: ");
         biblioteca.printAllBooks();
         System.out.println("Eliminar llibre");
-        biblioteca.deleteBook("Harry Potter", (T)"Ciencia-Ficcio");
+        biblioteca.deleteBook(1);
         System.out.println("Totes els llibres: ");
         biblioteca.printAllBooks();
-
-
     }
 }
