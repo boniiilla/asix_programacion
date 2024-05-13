@@ -42,22 +42,28 @@ class LlistaLlibres<T> {
     public LlistaLlibres(){
         books = new HashMap<T, ArrayList<Book>>();
         books.put((T) "Poesia", new ArrayList<Book>());
-        books.put((T)"Novela", new ArrayList<Book>());
-        books.put((T)"Ciencia-Ficcio", new ArrayList<Book>());
+        books.put((T) "Novela", new ArrayList<Book>());
+        books.put((T) "Ciencia-Ficcio", new ArrayList<Book>());
     }
 
-    public void addBooks(T genere, String title){
+    public void addBooks(String title, T genere){
         Book libro = new Book(title);
         books.get(genere).add(libro);
     }
-
-    public void deleteBook(){}
+    public void deleteBook(String title, T genere){
+        books.get(genere).remove(title);
+    }
 
     public void searchBook(String title){}
 
-    public void printAllBooks(T genere){
-        System.out.println("\nLlibres de genere: " + genere);
-        for (Book llibre: books.get(genere)) {
+    public void printAllBooks(){
+        for (Book llibre: books.get((T)"Ciencia-Ficcio")) {
+            System.out.println(llibre);
+        }
+        for (Book llibre: books.get((T)"Novela")) {
+            System.out.println(llibre);
+        }
+        for (Book llibre: books.get((T)"Poesia")) {
             System.out.println(llibre);
         }
     }
@@ -84,11 +90,14 @@ class Main {
         LlistaLlibres<T> biblioteca = new LlistaLlibres<T>();
 
         System.out.println("Add book");
-        biblioteca.addBooks((T)"Ciencia-Ficcio", "Harry Potter");
+        biblioteca.addBooks("Harry Potter", (T)"Ciencia-Ficcio");
         System.out.println("Totes els llibres: ");
-        biblioteca.printAllBooks((T)"Ciencia-Ficcio");
-        biblioteca.printAllBooks((T)"Novela");
-        biblioteca.printAllBooks((T)"Poesia");
+        biblioteca.printAllBooks();
+        System.out.println("Eliminar llibre");
+        biblioteca.deleteBook("Harry Potter", (T)"Ciencia-Ficcio");
+        System.out.println("Totes els llibres: ");
+        biblioteca.printAllBooks();
+
 
     }
 }
