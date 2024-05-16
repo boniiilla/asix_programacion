@@ -16,7 +16,7 @@ class Swing {
         JButton[] numericButtons = new JButton[10];
         GridLayout managerButton = new GridLayout(4, 3);
         BoxLayout managerGeneral = new BoxLayout(frame, BoxLayout.Y_AXIS);
-
+        managerGeneral.layoutContainer(frame);
         for (int i = 0; i < numericButtons.length; i++) {
             numericButtons[i] = new JButton(Integer.toString(i));
         }
@@ -26,8 +26,7 @@ class Swing {
         for (JButton jButton : numericButtons) {
             managerButton.addLayoutComponent(jButton.getName(), jButton);
         }
-        frame.add(pantallita);
-        
+        frame.setLayout(managerGeneral);
         frame.setSize(300, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
