@@ -1,4 +1,4 @@
-package tasques_profe;
+package tasca_fitxer;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -84,12 +84,11 @@ class Task {
 
     public String toString() {
         return 
-        "===========================================" +
-        "\nId: " + id + 
-        "\nName: " + name +
-        "\nDescription: " + description +
-        "\nEnd date: " + endDate +
-        "\nStatus: " + status;
+        "Id: " + id + 
+        ", Name: " + name +
+        ", Description: " + description +
+        ", End date: " + endDate +
+        ", Status: " + status;
     }
 }
 
