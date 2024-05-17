@@ -111,5 +111,9 @@ class Main {
         manager.onGoingTask(1);
         System.out.println("Print all tasks:");
         manager.printAllTask();
+        System.out.println("Modificar la tarea: ");
+        manager.modifyTask(1, "Hacer ejercicio abdominales", "Prodecer a hacer abdominales con series de 12x4", "25/05/24");
+        System.out.println("Print all tasks:");
+        manager.printAllTask();
     }
 }
