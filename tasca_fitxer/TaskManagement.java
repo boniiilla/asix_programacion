@@ -164,9 +164,9 @@ class FileManagement {
                 String enDate = input.next();
                 
                 manager.addTask(name, description, enDate);
-
-                writer.write("Nom: " + name + ", Descripció: " + description + ", Data venciment: " + enDate);
             }
+            
+            manager.printAllTask();
             
         } catch (IOException e) {
             System.out.println("S'ha produït un error en crear el fitxer.");
