@@ -30,6 +30,7 @@ class TaskManagement {
         Task task = tasks.get(taskid);
         task.onGoing();
     }
+    
 
     public void deleteTask(int taskId) {
         tasks.remove(taskId);
@@ -41,12 +42,6 @@ class TaskManagement {
         });
     }
 
-    public void printTaskByPriority(String estat) {
-        System.out.println("Tareas de estado: " + estat);
-        for (Task task: lists.get(estat)) {
-            System.out.println(task);
-        }
-    }
 }
 
 class Task {
