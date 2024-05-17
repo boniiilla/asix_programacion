@@ -31,6 +31,10 @@ class TaskManagement {
         task.onGoing();
     }
     
+    public void modifyTask(int taskid, String name, String description, String date){
+        Task task = tasks.get(taskid);
+        task.modifyTask(name, description, date);
+    }
 
     public void deleteTask(int taskId) {
         tasks.remove(taskId);
@@ -64,8 +68,10 @@ class Task {
         return id;
     }
 
-    public void modifyTask() {
-
+    public void modifyTask(String name, String description, String endDate) {
+        this.name = name;
+        this.description = description;
+        this.endDate = endDate;
     }
 
     public void onGoing(){
