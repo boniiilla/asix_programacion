@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 
 class TaskManagement {
-    private HashMap<Integer, Task> tasks;
+    public static HashMap<Integer, Task> tasks;
     private HashMap<String, ArrayList<Task>> lists;
 
     public TaskManagement() {
@@ -35,6 +35,7 @@ class TaskManagement {
         Task task = tasks.get(taskid);
         task.onGoing();
     }
+
     
     public void modifyTask(int taskid, String name, String description, String date){
         Task task = tasks.get(taskid);
@@ -85,6 +86,10 @@ class Task {
     
     public void done(){
         status = "Completat";
+    }
+    
+    public String getStatus() {
+        return status;
     }
 
     public String toString() {
@@ -142,13 +147,47 @@ class FileManagement {
             e.printStackTrace();
         }
 
-        try {
-            FileWriter writer = new FileWriter(file);
+        TaskManagement manager = new TaskManagement();
+
+        try (FileWriter writer = new FileWriter(file)){
+            
+            System.out.println("Cuantes tasques voleu afegir?");
+            int numTask = input.nextInt();
+            
+            for (int i = 0; numTask > i; i++) {
+                System.out.println("Introdueix la tasca:");
+                System.out.println("Nom:");
+                String name = input.next();
+                System.out.println("Descripció:");
+                String description = input.next();
+                System.out.println("Data de venciment (XX/XX/XX):");
+                String enDate = input.next();
+                
+                manager.addTask(name, description, enDate);
+            }
+            
+            writer.write("Hola");
 
         } catch (IOException e) {
             System.out.println("S'ha produït un error en crear el fitxer.");
             e.printStackTrace();
         }
 
+        boolean delete = false;
+
+        System.out.println("Introduce 1 si desea eliminar el fixero");
+        int num = input.nextInt();
+
+        if (num == 1){
+            delete = true;
+        }
+
+        if (delete == true) {
+            if (file.delete()) {
+                System.out.println("Fitxer eliminat amb exit.");
+            } else {
+                System.out.println("No s'ha pogut eliminar el fitxer");
+            }
+        }
     }
 }
