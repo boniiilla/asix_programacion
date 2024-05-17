@@ -1,10 +1,12 @@
 package tasca_fitxer;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 
 class TaskManagement {
@@ -122,7 +124,12 @@ class Main {
 
 class FileManagement {
     public static void main(String[] args) {
-        File file = new File("registerTask.txt");
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("En que fitxero desea guardar la informacion?");
+        String nameFile = input.nextLine();
+
+        File file = new File(nameFile);
         
         try {
             if (file.createNewFile()) {
@@ -130,6 +137,14 @@ class FileManagement {
             } else {
                 System.out.println("El fitxer ja existeix");
             }
+        } catch (IOException e) {
+            System.out.println("S'ha produït un error en crear el fitxer.");
+            e.printStackTrace();
+        }
+
+        try {
+            FileWriter writer = new FileWriter(file);
+
         } catch (IOException e) {
             System.out.println("S'ha produït un error en crear el fitxer.");
             e.printStackTrace();
