@@ -28,6 +28,22 @@ class Coordenade {
         --y;
     }
 
+    public void setNord() {
+        direccio = "Nord";
+    }
+
+    public void setSud() {
+        direccio = "Sud";
+    }
+
+    public void setEst() {
+        direccio = "Est";
+    }
+
+    public void setOest() {
+        direccio = "Oest";
+    }
+
     public String getDireccio() {
         return direccio;
     }
@@ -83,6 +99,21 @@ public class Robot {
         });
 
         enrere.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if (coordenada.getDireccio() == "Nord") {
+                    coordenada.restY();
+                } else if (coordenada.getDireccio() == "Oest"){
+                    coordenada.sumX();
+                } else if (coordenada.getDireccio() == "Sud"){
+                    coordenada.sumY();
+                } else if (coordenada.getDireccio() == "Est"){
+                    coordenada.restX();
+                }
+                pantallita.setText("     Estat del robot: " + coordenada.getCoordenade() + " Direcció: " + coordenada.getDireccio() + "     ");
+            }
+        });
+
+        esquerra.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if (coordenada.getDireccio() == "Nord") {
                     coordenada.restY();
