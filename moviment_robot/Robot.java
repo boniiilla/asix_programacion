@@ -111,6 +111,7 @@ public class Robot {
                 } else if (coordenada.getDireccio() == "Est"){
                     coordenada.sumX();
                 }
+                System.out.println("Estat del robot: " + coordenada.getCoordenade() + " Direcció: " + coordenada.getDireccio());
                 pantallita.setText("     Estat del robot: " + coordenada.getCoordenade() + " Direcció: " + coordenada.getDireccio() + "     ");
             }
         });
@@ -126,6 +127,7 @@ public class Robot {
                 } else if (coordenada.getDireccio() == "Est"){
                     coordenada.restX();
                 }
+                System.out.println("Estat del robot: " + coordenada.getCoordenade() + " Direcció: " + coordenada.getDireccio());
                 pantallita.setText("     Estat del robot: " + coordenada.getCoordenade() + " Direcció: " + coordenada.getDireccio() + "     ");
             }
         });
@@ -146,6 +148,7 @@ public class Robot {
                     coordenada.setIndex(0);
                     coordenada.setNord();
                 }
+                System.out.println("Estat del robot: " + coordenada.getCoordenade() + " Direcció: " + coordenada.getDireccio());
                 pantallita.setText("     Estat del robot: " + coordenada.getCoordenade() + " Direcció: " + coordenada.getDireccio() + "     ");
             }
         });
@@ -166,6 +169,7 @@ public class Robot {
                     coordenada.setIndex(3);
                     coordenada.setEst();;
                 }
+                System.out.println("Estat del robot: " + coordenada.getCoordenade() + " Direcció: " + coordenada.getDireccio());
                 pantallita.setText("     Estat del robot: " + coordenada.getCoordenade() + " Direcció: " + coordenada.getDireccio() + "     ");
             }
         });
