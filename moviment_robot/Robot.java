@@ -103,6 +103,19 @@ public class Robot {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
 
+        File file = new File("coordenades.txt");
+        
+        try {
+            if (file.createNewFile()) {
+                System.out.println("Fitxer creat amb èxit.");
+            } else {
+                System.out.println("El fitxer ja existeix");
+            }
+        } catch (IOException e) {
+            System.out.println("S'ha produït un error en crear el fitxer.");
+            e.printStackTrace();
+        }
+
         endavant.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if (coordenada.getDireccio() == "Nord") {
@@ -177,6 +190,19 @@ public class Robot {
             }
         });
 
-        
+        save_stat.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                try (FileWriter writer = new FileWriter(file)){
+                    writer.write("Estat del robot: " + coordenada.getCoordenade() + " Direcció: " + coordenada.getDireccio() + "\n");
+                    
+                } catch (IOException i) {
+                    System.out.println("S'ha produït un error en crear el fitxer.");
+                    i.printStackTrace();
+                }
+            }
+        });
+
+
+
     }
 }
