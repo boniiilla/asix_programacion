@@ -11,6 +11,15 @@ class Coordenade {
     private int x = 0;
     private int y = 0;
     private String direccio = "Nord";
+    public static int index = 0;
+
+    public void sumIndex() {
+        ++index;
+    }
+
+    public void restIndex() {
+        --index;
+    }
 
     public void sumX() {
         ++x;
@@ -42,6 +51,14 @@ class Coordenade {
 
     public void setOest() {
         direccio = "Oest";
+    }
+
+    public void setIndex(int i){
+        index = i;
+    }
+
+    public int getIndex(){
+        return index;
     }
 
     public String getDireccio() {
@@ -115,14 +132,39 @@ public class Robot {
 
         esquerra.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if (coordenada.getDireccio() == "Nord") {
-                    coordenada.restY();
-                } else if (coordenada.getDireccio() == "Oest"){
-                    coordenada.sumX();
-                } else if (coordenada.getDireccio() == "Sud"){
-                    coordenada.sumY();
-                } else if (coordenada.getDireccio() == "Est"){
-                    coordenada.restX();
+                coordenada.sumIndex();
+
+                if (coordenada.getIndex() == 0) {
+                    coordenada.setNord();
+                } else if (coordenada.getIndex() == 1){
+                    coordenada.setOest();
+                } else if (coordenada.getIndex() == 2){
+                    coordenada.setSud();
+                } else if (coordenada.getIndex() == 3){
+                    coordenada.setEst();
+                } else if (coordenada.getIndex() == 4){
+                    coordenada.setIndex(0);
+                    coordenada.setNord();
+                }
+                pantallita.setText("     Estat del robot: " + coordenada.getCoordenade() + " Direcció: " + coordenada.getDireccio() + "     ");
+            }
+        });
+
+        esquerra.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                coordenada.restIndex();
+
+                if (coordenada.getIndex() == 0) {
+                    coordenada.setNord();
+                } else if (coordenada.getIndex() == 1){
+                    coordenada.setOest();
+                } else if (coordenada.getIndex() == 2){
+                    coordenada.setSud();
+                } else if (coordenada.getIndex() == 3){
+                    coordenada.setEst();
+                } else if (coordenada.getIndex() == -1){
+                    coordenada.setIndex(3);
+                    coordenada.setEst();;
                 }
                 pantallita.setText("     Estat del robot: " + coordenada.getCoordenade() + " Direcció: " + coordenada.getDireccio() + "     ");
             }
