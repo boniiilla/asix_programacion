@@ -19,6 +19,8 @@ public class Robot {
         GridLayout managerButton = new GridLayout(3, 3);
         BoxLayout managerGeneral = new BoxLayout(frame, BoxLayout.Y_AXIS);
 
+        managerGeneral.layoutContainer(frame);
+
         buttonPanel.add(endavant);
         buttonPanel.add(enrere);
         buttonPanel.add(esquerra);
@@ -28,8 +30,9 @@ public class Robot {
 
         frame.add(pantallita);
         frame.add(buttonPanel);
+        frame.setLayout(managerButton);
 
-        frame.setSize(300, 500);
+        frame.setSize(375, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
