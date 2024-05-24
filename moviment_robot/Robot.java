@@ -2,6 +2,9 @@ package moviment_robot;
 
 import javax.swing.*;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
