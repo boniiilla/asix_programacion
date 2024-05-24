@@ -133,7 +133,7 @@ public class Robot {
         esquerra.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 coordenada.sumIndex();
-
+                System.out.println(coordenada.getIndex());
                 if (coordenada.getIndex() == 0) {
                     coordenada.setNord();
                 } else if (coordenada.getIndex() == 1){
@@ -150,7 +150,7 @@ public class Robot {
             }
         });
 
-        esquerra.addActionListener(new ActionListener() {
+        dreta.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 coordenada.restIndex();
 
