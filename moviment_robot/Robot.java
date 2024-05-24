@@ -176,5 +176,7 @@ public class Robot {
                 pantallita.setText("     Estat del robot: " + coordenada.getCoordenade() + " Direcció: " + coordenada.getDireccio() + "     ");
             }
         });
+
+        
     }
 }
