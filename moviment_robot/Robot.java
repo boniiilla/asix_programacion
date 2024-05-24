@@ -25,5 +25,12 @@ public class Robot {
         buttonPanel.add(dreta);
         buttonPanel.add(save_stat);
         buttonPanel.add(load_stat);
+
+        frame.add(pantallita);
+        frame.add(buttonPanel);
+
+        frame.setSize(300, 500);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
     }
 }
