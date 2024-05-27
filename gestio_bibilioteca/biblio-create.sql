@@ -21,9 +21,9 @@ INSERT INTO Autor(nom, cognom) VALUES('Carlos', 'Bonilla');
 INSERT INTO Autor(nom, cognom) VALUES('Izan', 'Lozano');
 
 INSERT INTO Llibre(titol, anyPublicacio, autorId) 
-VALUES ('Harry Potter', '2012-04-12', 1)
+VALUES ('Harry Potter', '2012-04-12', 1);
 INSERT INTO Llibre(titol, anyPublicacio, autorId) 
-VALUES ('Los Pitufos', '2015-09-01', 2)
+VALUES ('Los Pitufos', '2015-09-01', 2);
 
 SELECT titol FROM Llibre l 
 JOIN Autor a ON l.autorId = a.id
