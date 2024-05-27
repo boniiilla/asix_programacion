@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class biblioteca {
     public static Connection getConnection() {
-        String url = "x";
+        String url = "jdbc:mysql://192.168.133.3:3306/";
         String user = "root";
         String password = "@MVM2016";
         try {
@@ -16,4 +16,8 @@ public class biblioteca {
             return null;
         }
     }
+
+    public static void main(String[] args) {
+        biblioteca.getConnection();
+    }   
 }
