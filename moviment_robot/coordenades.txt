@@ -1,1 +1,1 @@
-Estat del robot: (0, 0) Direcció: Nord
+Estat del robot: (0, 16) Direcció: Nord
