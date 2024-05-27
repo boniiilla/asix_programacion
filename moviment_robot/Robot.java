@@ -103,7 +103,7 @@ public class Robot {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
 
-        File file = new File("coordenades.txt");
+        File file = new File("moviment_robot/coordenades.txt");
         
         try {
             if (file.createNewFile()) {
