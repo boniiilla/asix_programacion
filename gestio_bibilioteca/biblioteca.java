@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class biblioteca {
+public class Biblioteca {
     public static Connection getConnection() {
         String url = "jdbc:mysql://192.168.133.3:3306/biblio";
         String user = "root";
@@ -18,6 +18,6 @@ public class biblioteca {
     }
 
     public static void main(String[] args) {
-        biblioteca.getConnection();
+        Biblioteca.getConnection();
     }   
 }
