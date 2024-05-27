@@ -1,0 +1,17 @@
+DROP DATABASE IF EXISTS biblio;
+CREATE DATABASE IF NOT EXISTS biblio;
+
+CREATE TABLE Autor (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(24),
+    cognom VARCHAR(24)
+);
+
+CREATE TABLE Llibre (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titol VARCHAR(24),
+    anyPublicacio DATE,
+    autorId INT,
+    FOREIGN KEY (autorId) REFERENCES Autor(id)
+);
+
