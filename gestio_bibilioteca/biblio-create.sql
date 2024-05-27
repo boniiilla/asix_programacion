@@ -23,3 +23,6 @@ VALUES ('Harry Potter', '2012-04-12', 1)
 INSERT INTO Llibre(titol, anyPublicacio, autorId) 
 VALUES ('Los Pitufos', '2015-09-01', 2)
 
+SELECT titol FROM Llibre l 
+JOIN Autor a ON l.autorId = a.id
+WHERE a.nom = 'Carlos Bonilla';
