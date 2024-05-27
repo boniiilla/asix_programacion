@@ -25,4 +25,4 @@ VALUES ('Los Pitufos', '2015-09-01', 2)
 
 SELECT titol FROM Llibre l 
 JOIN Autor a ON l.autorId = a.id
-WHERE a.nom = 'Carlos Bonilla';
+WHERE a.nom = 'Carlos';
