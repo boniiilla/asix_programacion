@@ -16,3 +16,7 @@ CREATE TABLE Pelicula (
     directorId INT,
     FOREIGN KEY (directorId) REFERENCES Director(id)
 );
+
+INSERT INTO Director(nom, cognom) VALUES('Carlos', 'Bonilla');
+
+INSERT INTO Pelicula(titol, anyEstrena, directorId) VALUES('Harry Potter', '2014-05-23', 1);
