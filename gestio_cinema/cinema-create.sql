@@ -20,3 +20,7 @@ CREATE TABLE Pelicula (
 INSERT INTO Director(nom, cognom) VALUES('Carlos', 'Bonilla');
 
 INSERT INTO Pelicula(titol, anyEstrena, directorId) VALUES('Harry Potter', '2014-05-23', 1);
+
+SELECT titol FROM Pelicula p
+JOIN Director d ON p.directorId = d.id
+WHERE d.nom = 'Carlos' and d.cognom = 'Bonilla';
