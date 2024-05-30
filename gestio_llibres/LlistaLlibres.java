@@ -1,32 +1,22 @@
 package gestio_llibres;
 
 import java.util.HashMap;
-import java.util.ArrayList;
 
 
-class LlistaLlibres<T> {
+
+class LlistaLlibres {
     private HashMap<Integer, Book> biblio;
-    private HashMap<T, ArrayList<Book>> books;
 
     public LlistaLlibres(){
         biblio = new HashMap<Integer, Book>();
-        books = new HashMap<T, ArrayList<Book>>();
-        books.put((T) "Poesia", new ArrayList<Book>());
-        books.put((T) "Novela", new ArrayList<Book>());
-        books.put((T) "Ciencia-Ficcio", new ArrayList<Book>());
     }
 
-    public void addBooks(String title, T genere){
+    public void addBooks(String title){
         Book libro = new Book(title);
-        books.get(genere).add(libro);
         biblio.put(libro.getId(), libro);
     }
     public void deleteBook(int bookId){
         biblio.remove(bookId);
-    }
-
-    public void searchBook(String title){
-        
     }
 
     public void printAllBooks(){
@@ -60,11 +50,11 @@ class Book {
 }
 
 class Main {
-    public static <T> void main(String[] args) {
-        LlistaLlibres<T> biblioteca = new LlistaLlibres<T>();
+    public static  void main(String[] args) {
+        LlistaLlibres biblioteca = new LlistaLlibres();
 
         System.out.println("Add book");
-        biblioteca.addBooks("Harry Potter", (T)"Ciencia-Ficcio");
+        biblioteca.addBooks("Harry Potter");
         System.out.println("Totes els llibres: ");
         biblioteca.printAllBooks();
         System.out.println("Eliminar llibre");

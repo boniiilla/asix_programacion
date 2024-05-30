@@ -1,4 +1,4 @@
-package GestioAventura;
+
 
 class Personatge {
     private String nom;
