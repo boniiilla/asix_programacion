@@ -14,6 +14,10 @@ public class Book {
         return this.titol;
     }
 
+    public void setTitol(String n){
+        this.titol = n;
+    }
+
     public int getId(){
         return id;
     }
