@@ -1,4 +1,4 @@
-package pr_database.model;
+package Book.JavaDatabaseExample.src.main.java.com.example.database.model;
 
 public class Book {
     private static int numInstances = 0;

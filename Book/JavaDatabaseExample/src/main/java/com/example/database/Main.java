@@ -1,4 +1,6 @@
-package pr_database.model;
+package Book.JavaDatabaseExample.src.main.java.com.example.database;
+
+import Book.JavaDatabaseExample.src.main.java.com.example.database.model.Book;
 
 public class Main {
     public static void main(String[] args) {

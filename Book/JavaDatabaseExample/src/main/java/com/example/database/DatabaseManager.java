@@ -1,4 +1,4 @@
-package pr_database.model;
+package Book.JavaDatabaseExample.src.main.java.com.example.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import pr_database.model.Book;
+import Book.JavaDatabaseExample.src.main.java.com.example.database.model.Book;
 
 public class DatabaseManager {
     private Connection connection;
