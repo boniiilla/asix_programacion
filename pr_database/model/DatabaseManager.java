@@ -77,4 +77,17 @@ public class DatabaseManager {
             e.printStackTrace();
         }
     }
+
+    public void deleteStudent(int id) {
+        String query = "DELETE FROM students WHERE id = ?";
+
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+            System.out.println("Estudiant eliminat.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

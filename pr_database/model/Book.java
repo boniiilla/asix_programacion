@@ -18,10 +18,6 @@ public class Book {
         return id;
     }
 
-    public String getBook(int id){
-        return this.titol;
-    }
-
     public String toString(){
         return "ID: " + id + " Name: " + this.titol;
     }
