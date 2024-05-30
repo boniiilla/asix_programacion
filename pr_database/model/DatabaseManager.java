@@ -57,7 +57,7 @@ public class DatabaseManager {
             stmt.setInt(1, book.getId());
             stmt.setString(2, book.getTitol());
             stmt.executeUpdate();
-            System.out.println("Estudiant afegit.");
+            System.out.println("Llibre afegit.");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -72,20 +72,20 @@ public class DatabaseManager {
             stmt.setString(1, book.getTitol());
             stmt.setInt(2, book.getId());
             stmt.executeUpdate();
-            System.out.println("Estudiant modificat.");
+            System.out.println("Llibre modificat.");
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
     public void deleteStudent(int id) {
-        String query = "DELETE FROM students WHERE id = ?";
+        String query = "DELETE FROM llibre WHERE id = ?";
 
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setInt(1, id);
             stmt.executeUpdate();
-            System.out.println("Estudiant eliminat.");
+            System.out.println("Llibre eliminat.");
         } catch (SQLException e) {
             e.printStackTrace();
         }
