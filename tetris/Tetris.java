@@ -1,5 +1,9 @@
 package tetris;
 
-public class Tetris {
-    
+import javax.swing.JFrame;
+
+class Tetris extends JFrame{
+    public Tetris() {
+        
+    }
 }
