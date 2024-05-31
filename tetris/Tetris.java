@@ -2,7 +2,7 @@ package tetris;
 
 import javax.swing.JFrame;
 
-class Tetris extends JFrame{
+public class Tetris extends JFrame{
     public Tetris() {
         setSize(500, 700);
         setTitle("Tetris para celebrar suspensos");
